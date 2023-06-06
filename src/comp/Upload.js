@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ProgressBar from "./ProgressBar";
 
 const UploadImg = () => {
   const [file, setFile] = useState(null);
@@ -29,13 +30,14 @@ const UploadImg = () => {
             onChange={handleChange}
             className="hidden"
           />
-          <div className="rounded-full border shadow-md p-2 w-14 h-14 mx-auto my-10 flex items-center justify-center cursor-pointer">
-            <span className="font-semibold text-2xl">+</span>
+          <div className="rounded-full border shadow-md p-2 w-14 h-14 mx-auto my-10 flex items-center justify-center cursor-pointer hover:bg-red-100">
+            <span className="font-semibold text-2xl ">+</span>
           </div>
         </label>
       </form>
       <div>{error && <div>{error}</div>}</div>
       <div>{file && <div>{file.name}</div>}</div>
+      {file && <ProgressBar file={file} setFile={setFile} />}
     </div>
   );
 };
