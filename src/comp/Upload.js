@@ -22,8 +22,17 @@ const UploadImg = () => {
   return (
     <div>
       <form action="">
-        <p>Upload File</p>
-        <input type="file" onChange={handleChange} />
+        <label htmlFor="fileUpload">
+          <input
+            type="file"
+            id="fileUpload"
+            onChange={handleChange}
+            className="hidden"
+          />
+          <div className="rounded-full border shadow-md p-2 w-14 h-14 mx-auto my-10 flex items-center justify-center cursor-pointer">
+            <span className="font-semibold text-2xl">+</span>
+          </div>
+        </label>
       </form>
       <div>{error && <div>{error}</div>}</div>
       <div>{file && <div>{file.name}</div>}</div>
