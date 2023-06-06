@@ -1,5 +1,5 @@
 import React from "react";
-
+import UploadImg from "./Upload";
 function Main() {
   return (
     <div className="text-center font-mono py-6">
@@ -13,6 +13,9 @@ function Main() {
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi,
         error.
       </p>
+      <div>
+        <UploadImg />
+      </div>
     </div>
   );
 }
