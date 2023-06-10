@@ -7,7 +7,7 @@ function ImageGrid({ setSelectedImg }) {
   console.log(docs);
   return (
     <div
-      className="grid grid-cols-3 my-5 mx-auto gap-20
+      className="grid md:grid-cols-2 lg:grid-cols-3   mx-auto md:gap-14  gap-4
     "
     >
       {docs &&
@@ -16,7 +16,7 @@ function ImageGrid({ setSelectedImg }) {
             whileHover={{ opacity: 1 }}
             layout
             key={doc.id}
-            className="overflow-hidden h-0 py-[50%] px-0 relative opacity-[.8]"
+            className="overflow-hidden h-0 py-[50%] px-0 relative opacity-[.9]"
             onClick={() => setSelectedImg(doc.url)}
           >
             <motion.img
