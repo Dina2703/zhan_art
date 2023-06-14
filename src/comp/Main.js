@@ -3,7 +3,7 @@ import React from "react";
 import UploadImg from "./Upload";
 function Main() {
   return (
-    <div className="text-center font-mono py-6 text-slate-600">
+    <div className="text-center font-mono py-6 text-slate-600 h-auto">
       <h1
         className="text-xl font-semibold mb-4
       "
