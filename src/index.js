@@ -3,5 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Login from "./comp/Login";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  </BrowserRouter>
+);
