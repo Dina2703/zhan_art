@@ -1,22 +1,18 @@
-import Main from "./comp/Main";
-import Navbar from "./comp/Navbar";
-import ImageGrid from "./comp/ImageGrid";
-import Modal from "./comp/Modal";
+import Login from "./comp/Login";
+import Hero from "./comp/Hero";
 import { useState } from "react";
-import Footer from "./comp/Footer";
+
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   return (
-    <div className="max-w-4xl m-auto px-5 md:px-10 2xl:px-0  min-h-full  relative">
-      <Navbar />
-      <Main />
-      <ImageGrid setSelectedImg={setSelectedImg} />
-      {selectedImg && (
-        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
-      )}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Hero isAdmin={isAdmin} />} />
+        <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
