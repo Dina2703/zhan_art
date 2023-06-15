@@ -1,8 +1,12 @@
 import React from "react";
 import useFirestore from "../hooks/useFirestore";
 import { motion } from "framer-motion";
+import { FaTrash } from "react-icons/fa";
+import { useContext } from "react";
+import { AdminContext } from "../App";
 
 function ImageGrid({ setSelectedImg }) {
+  const isAdmin = useContext(AdminContext);
   const { docs } = useFirestore("images");
   // console.log(docs);
 
@@ -17,9 +21,12 @@ function ImageGrid({ setSelectedImg }) {
             whileHover={{ opacity: 1 }}
             layout
             key={doc.id}
-            className="overflow-hidden h-0 py-[50%] px-0 relative opacity-[.8]"
+            className="overflow-hidden  h-0 py-[50%] px-0 relative opacity-[.8]"
             onClick={() => setSelectedImg(doc.url)}
           >
+            {isAdmin && (
+              <FaTrash className="absolute z-10 top-2 right-2 cursor-pointer text-red-500 " />
+            )}
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

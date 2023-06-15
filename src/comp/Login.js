@@ -3,14 +3,13 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login({ setIsAdmin }) {
-  const auth = getAuth();
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
