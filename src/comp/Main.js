@@ -1,7 +1,9 @@
-import React from "react";
-
+import { useContext } from "react";
 import UploadImg from "./Upload";
-function Main({ isAdmin }) {
+import { AdminContext } from "../App";
+
+function Main() {
+  const isAdmin = useContext(AdminContext);
   return (
     <div className="text-center font-mono py-6 text-slate-600 h-auto">
       <h1
