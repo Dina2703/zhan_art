@@ -10,14 +10,13 @@ function Navbar() {
         Zhan KHVAN
       </h1>
 
-      <div>
-        <BsFillMoonStarsFill className="cursor-pointer text-md dark:text-white" />
-      </div>
-
-      {/* <ul className="flex gap-5 lowercase items-start   font-mono cursor-pointer  font-semibold text-sm ">
+      <ul className="flex gap-5 lowercase items-start   font-mono cursor-pointer  font-semibold text-sm ">
         <li className="text-slate-600 hover:underline">about</li>
         <li className="text-slate-600 hover:underline">blog</li>
-      </ul> */}
+      </ul>
+      <div>
+        <BsFillMoonStarsFill className="cursor-pointer text-sm dark:text-white text-gray-600" />
+      </div>
     </nav>
   );
 }

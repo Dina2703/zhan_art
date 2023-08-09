@@ -25,7 +25,10 @@ function ImageGrid({ setSelectedImg }) {
             onClick={() => setSelectedImg(doc.url)}
           >
             {isAdmin && (
-              <FaTrash className="absolute z-10 top-2 right-2 cursor-pointer text-red-500 " />
+              <FaTrash
+                className="absolute z-10 top-2 right-2 cursor-pointer text-red-500 "
+                // onClick={handleDelete}
+              />
             )}
             <motion.img
               initial={{ opacity: 0 }}
