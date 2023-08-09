@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { FaTrash } from "react-icons/fa";
 import { useContext } from "react";
 import { AdminContext } from "../App";
-import Gallery from "react-photo-gallery";
-import { photos } from "../photos";
+// import Gallery from "react-photo-gallery";
 
 function ImageGrid({ setSelectedImg }) {
   const isAdmin = useContext(AdminContext);

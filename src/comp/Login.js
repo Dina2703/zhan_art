@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Login({ setIsAdmin }) {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(FaEyeSlash);
 
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -25,6 +28,16 @@ export default function Login({ setIsAdmin }) {
       .catch((error) => {
         navigate("/");
       });
+  };
+
+  const handleToggle = () => {
+    if (type === "password") {
+      setIcon(FaEye);
+      setType("text");
+    } else {
+      setIcon(FaEyeSlash);
+      setType("password");
+    }
   };
 
   return (
@@ -48,7 +61,7 @@ export default function Login({ setIsAdmin }) {
               className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
-          <div className="mb-2">
+          <div className="mb-2 relative">
             <label
               htmlFor="password"
               className="block text-sm font-semibold text-gray-800"
@@ -59,13 +72,20 @@ export default function Login({ setIsAdmin }) {
               name="password"
               autoComplete="off"
               onChange={(e) => setPassword(e.target.value)}
-              type="password"
+              type={type}
               className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
+
+            <div
+              className="absolute bottom-3 right-6 text-gray-600 hover:cursor-pointer"
+              onClick={handleToggle}
+            >
+              {icon}
+            </div>
           </div>
-          <a href="#" className="text-xs text-green-600 hover:underline">
+          {/* <a href="#" className="text-xs text-green-600 hover:underline">
             Forget Password?
-          </a>
+          </a> */}
           <div className="mt-6">
             <button
               type="submit"
