@@ -11,16 +11,8 @@ ul {
   list-style-type: none;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: dark) {
   body {
-    background-color: #faf5f5;
-    color: #222;
+    background-color: rgb(71 85 105);
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #061630;
-    color: hsl(210, 10%, 62%);
-  }
-}
+} */

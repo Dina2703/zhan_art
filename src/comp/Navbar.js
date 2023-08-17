@@ -1,4 +1,5 @@
-import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
+// import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
+import Switcher from "./Switcher";
 
 function Navbar() {
   return (
@@ -15,8 +16,7 @@ function Navbar() {
         <li className="  hover:underline">blog</li>
       </ul>
       <div>
-        <BsFillMoonStarsFill className="cursor-pointer text-sm   " />
-        <BsSun className="cursor-pointer text-md   " />
+        <Switcher />
       </div>
     </nav>
   );
