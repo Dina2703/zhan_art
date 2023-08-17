@@ -5,7 +5,7 @@ import { AdminContext } from "../App";
 function Main() {
   const isAdmin = useContext(AdminContext);
   return (
-    <div className="text-center font-mono py-6 text-slate-600 h-auto">
+    <div className="text-center font-mono py-6 text-slate-600 h-auto dark:text-white">
       <h1
         className="text-xl font-semibold mb-4
       "
