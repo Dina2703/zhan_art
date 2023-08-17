@@ -1,7 +1,6 @@
 import Login from "./comp/Login";
 import Hero from "./comp/Hero";
 import { createContext, useState } from "react";
-
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 export const AdminContext = createContext();
