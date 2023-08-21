@@ -11,8 +11,14 @@ ul {
   list-style-type: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   body {
     background-color: rgb(71 85 105);
   }
-} */
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: rgb(237, 238, 240);
+  }
+}

@@ -22,7 +22,7 @@ function ImageGrid({ setSelectedImg }) {
   console.log(Math.floor(Math.random() * 7));
   return (
     <div
-      className="grid md:grid-cols-2 lg:grid-cols-3   mx-auto   gap-2
+      className=" min-h-screen grid md:grid-cols-2 lg:grid-cols-3   mx-auto   gap-2
     "
     >
       {docs &&
