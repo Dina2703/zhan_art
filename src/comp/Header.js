@@ -1,25 +1,51 @@
 // import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
 import Switcher from "./Switcher";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <nav className="flex  justify-between md:items-end items-center py-4  gap-5 md:gap-10 ">
-      <Link
+      <NavLink
         to="/"
         className="text-3xl font-bold flex-1  uppercase tracking-wide  
       "
       >
         Zhan KHVAN
-      </Link>
+      </NavLink>
 
       <ul className="flex gap-5 lowercase items-start   font-mono cursor-pointer  font-semibold text-sm ">
-        <Link to="/about">
-          <li className="  hover:underline">about</li>
-        </Link>
-        <Link to="/blogs">
-          <li className="  hover:underline">blog</li>
-        </Link>
+        <NavLink
+          to="/"
+          style={({ isActive }) =>
+            isActive ? { display: "none" } : { display: "inline-block" }
+          }
+        >
+          <li className="  hover:dark:text-gray-300">home</li>
+        </NavLink>
+        <NavLink
+          to="/about"
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  borderBottom: "2px solid #fff",
+                }
+              : { borderBottom: "none" }
+          }
+        >
+          <li className="  hover:dark:text-gray-300">about</li>
+        </NavLink>
+        <NavLink
+          to="/blogs"
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  borderBottom: "2px solid #fff",
+                }
+              : { borderBottom: "none" }
+          }
+        >
+          <li className="  hover:dark:text-gray-300">blog</li>
+        </NavLink>
       </ul>
       <div>
         <Switcher />
