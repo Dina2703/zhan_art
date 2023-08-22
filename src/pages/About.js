@@ -2,15 +2,17 @@ import React from "react";
 
 function About() {
   return (
-    <div className="min-h-fit ">
-      <div className="flex lg:flex-row flex-col gap-10 items-center text-center lg:text-left my-10">
-        <div className="flex-1">
+    <div className="flex-1">
+      <div className="flex lg:flex-row flex-col  gap-10 items-center text-center lg:text-left justify-center  ">
+        <div className="flex-1 px-5 lg:px-0 lg:mr-10 mt-5 lg:mt-10">
           <img src="avatar.jpg" alt="Zhan Khvan" />
         </div>
         <div className="flex-1">
-          <h1>Hello Hello</h1>
+          <h1 className="font-semibold mb-5 text-2xl font-serif">
+            Hello Hello
+          </h1>
           <div>
-            <p>
+            <p className="text-base leading-normal">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
               perferendis, voluptatibus exercitationem corrupti aspernatur,
               facere, modi cupiditate ab fuga pariatur fugiat nemo commodi

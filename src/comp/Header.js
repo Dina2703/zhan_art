@@ -20,7 +20,7 @@ function Header() {
             isActive ? { display: "none" } : { display: "inline-block" }
           }
         >
-          <li className="  hover:dark:text-gray-300">home</li>
+          <li className="  hover:dark:text-gray-400">home</li>
         </NavLink>
         <NavLink
           to="/about"
@@ -32,7 +32,7 @@ function Header() {
               : { borderBottom: "none" }
           }
         >
-          <li className="  hover:dark:text-gray-300">about</li>
+          <li className="  hover:dark:text-gray-400">about</li>
         </NavLink>
         <NavLink
           to="/blogs"
@@ -44,7 +44,7 @@ function Header() {
               : { borderBottom: "none" }
           }
         >
-          <li className="  hover:dark:text-gray-300">blog</li>
+          <li className="  hover:dark:text-gray-400">blog</li>
         </NavLink>
       </ul>
       <div>

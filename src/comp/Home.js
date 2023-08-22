@@ -8,7 +8,7 @@ function Home() {
   const isAdmin = useContext(AdminContext);
   const [selectedImg, setSelectedImg] = useState(null);
   return (
-    <div className="text-center font-mono py-6 text-slate-600 h-auto dark:text-white">
+    <div className="text-center h-fit font-mono py-6 text-slate-600 dark:text-white">
       <h1
         className="text-xl font-semibold mb-4
       "
