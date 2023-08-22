@@ -24,24 +24,16 @@ function Header() {
         </NavLink>
         <NavLink
           to="/about"
-          style={({ isActive }) =>
-            isActive
-              ? {
-                  borderBottom: "2px solid #fff",
-                }
-              : { borderBottom: "none" }
+          className={({ isActive }) =>
+            isActive ? "border-b-4 dark:border-gray-400 border-gray-500" : ""
           }
         >
           <li className="  hover:dark:text-gray-400">about</li>
         </NavLink>
         <NavLink
           to="/blogs"
-          style={({ isActive }) =>
-            isActive
-              ? {
-                  borderBottom: "2px solid #fff",
-                }
-              : { borderBottom: "none" }
+          className={({ isActive }) =>
+            isActive ? "border-b-4 dark:border-gray-400 border-gray-500" : ""
           }
         >
           <li className="  hover:dark:text-gray-400">blog</li>
