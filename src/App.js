@@ -7,6 +7,7 @@ import Blogs from "./pages/Blogs";
 import Header from "./comp/Header";
 import Footer from "./comp/Footer";
 import Home from "./comp/Home";
+import BlogAdmin from "./pages/BlogAdmin";
 
 export const AdminContext = createContext();
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/login" element={<BlogAdmin />} />
             <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
           </Route>
         </Routes>

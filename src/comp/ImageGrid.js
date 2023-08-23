@@ -5,6 +5,8 @@ import { FaTrash } from "react-icons/fa";
 import { useContext } from "react";
 import { AdminContext } from "../App";
 // import Gallery from "react-photo-gallery";
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 function ImageGrid({ setSelectedImg }) {
   const isAdmin = useContext(AdminContext);
@@ -20,9 +22,15 @@ function ImageGrid({ setSelectedImg }) {
   });
   console.log(photos2);
   console.log(Math.floor(Math.random() * 7));
+
+  //delete image
+  const deleteImg = async (id) => {
+    await deleteDoc(doc(db, "images", id));
+  };
+
   return (
     <div
-      className=" min-h-screen grid md:grid-cols-2 lg:grid-cols-3   mx-auto   gap-2
+      className=" min-h-screen grid md:grid-cols-2 lg:grid-cols-3   mx-auto   gap-5 
     "
     >
       {docs &&
@@ -37,7 +45,7 @@ function ImageGrid({ setSelectedImg }) {
             {isAdmin && (
               <FaTrash
                 className="absolute z-10 top-2 right-2 cursor-pointer text-red-500 "
-                // onClick={handleDelete}
+                onClick={() => deleteImg(doc.id)}
               />
             )}
             <motion.img
