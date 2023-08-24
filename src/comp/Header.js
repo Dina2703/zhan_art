@@ -30,6 +30,7 @@ function Header() {
         >
           <li className="  hover:dark:text-gray-400">about</li>
         </NavLink>
+
         <NavLink
           to="/blogs"
           className={({ isActive }) =>

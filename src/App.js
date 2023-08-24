@@ -32,9 +32,9 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs" element={<Blogs isAdmin={isAdmin} />} />
             <Route
-              path="/blogs/login"
+              path="/blogs/admin"
               element={<BlogAdmin isAdmin={isAdmin} />}
             />
             <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
