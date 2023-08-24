@@ -23,6 +23,7 @@ export default function Login({ setIsAdmin }) {
           navigate("/");
         } else {
           setIsAdmin(false);
+          navigate("");
         }
       })
       .catch((error) => {
