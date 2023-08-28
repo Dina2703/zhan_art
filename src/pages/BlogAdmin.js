@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { db, storage } from "../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { ref } from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { v4 as uuidv4 } from "uuid";
 
 function BlogAdmin() {
   const [post, setPost] = useState({
@@ -9,16 +10,63 @@ function BlogAdmin() {
     feelings: "",
     category: "",
     body: "",
-    banner: "",
+    image: "",
   });
 
-  const { title, feelings, category, body, banner } = post;
+  const [err, setErr] = useState(null);
+
+  const { title, feelings, category, body, image } = post;
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const fileName = `${image.name}-${uuidv4()}`;
+    const storageRef = ref(storage, "image/" + fileName);
+    const collectionRef = collection(db, "posts");
+    const uploadTask = uploadBytesResumable(storageRef, image);
+    uploadTask.on(
+      "state_changed",
+
+      (snap) => {
+        const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+        // console.log(percentage);
+        // console.log(snap);
+      },
+      (err) => {
+        setErr(err);
+      },
+      async () => {
+        //get url of an image
+        const url = await getDownloadURL(storageRef);
+        await addDoc(collectionRef, {
+          title,
+          feelings,
+          category,
+          body,
+          image: url,
+          createdAt: serverTimestamp(),
+        });
+      }
+    );
+
+    // console.log(post);
+    // const docRef = await addDoc(collection(db, "posts"), { ...post });
+    // console.log(docRef);
+
+    setPost({
+      title: "",
+      feelings: "",
+      category: "",
+      body: "",
+      image: "",
+    });
+  };
 
   const handleChange = (e) => {
     if (e.target.files) {
       setPost((prev) => ({
         ...prev,
-        banner: e.target.files[0],
+        image: e.target.files[0],
       }));
     }
     setPost((prev) => ({
@@ -27,28 +75,6 @@ function BlogAdmin() {
     }));
   };
 
-  const addPostToFirebase = async (e) => {
-    e.preventDefault();
-    if (banner) {
-      const storageRef = ref(storage, banner.name);
-    }
-    await addDoc(collection(db, "posts"), {
-      title,
-      feelings,
-      category,
-      body,
-      postedOn: serverTimestamp(),
-    });
-    // console.log(post);
-    // console.log(banner);
-    setPost({
-      title: "",
-      feelings: "",
-      category: "",
-      body: "",
-      banner: "",
-    });
-  };
   return (
     <div className="relative flex flex-col  justify-center min-h-screen overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-green-600/40  lg:max-w-xl">
@@ -56,12 +82,12 @@ function BlogAdmin() {
           Create a new post
         </h1>
         <form
-          onSubmit={addPostToFirebase}
+          onSubmit={onSubmit}
           className="flex flex-col mt-6 gap-6 text-slate-600 "
         >
           <div className="flex items-center justify-center flex-col gap-4 ">
-            {banner ? (
-              <div>{banner && <div>{banner.name}</div>}</div>
+            {image ? (
+              <div>{image && <div>{image.name}</div>}</div>
             ) : (
               <label className="block text-sm font-semibold lowercase ">
                 Add An Image
@@ -90,7 +116,7 @@ function BlogAdmin() {
               value={title}
               type="text"
               id="title"
-              className="flex-1 border-gray-400 border-b-2 outline-none px-2 py-1 text-sm"
+              className="flex-1 bg-gray-100  border-gray-400 border-b-2 outline-none px-2 py-1 text-sm"
               // onChange={handleChange}
               placeholder="type..."
               onChange={handleChange}
@@ -110,7 +136,7 @@ function BlogAdmin() {
               onChange={handleChange}
               type="text"
               id="emotion"
-              className="flex-1 border-gray-400 border-b-2 outline-none px-2 py-1 text-sm"
+              className="flex-1 bg-gray-100  border-gray-400 border-b-2 outline-none px-2 py-1 text-sm"
               placeholder="type..."
               // onChange={handleChange}
             />
@@ -124,7 +150,7 @@ function BlogAdmin() {
               Category
             </label>
             <select
-              className=" border-gray-400 border-b-2 outline-none px-2 py-1 text-sm flex-1 "
+              className="bg-gray-100  border-gray-400 border-b-2 outline-none px-2 py-1 text-sm flex-1 "
               value={category}
               name="category"
               onChange={handleChange}
