@@ -3,6 +3,7 @@ import { db, storage } from "../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 function BlogAdmin() {
   const [post, setPost] = useState({
@@ -14,6 +15,8 @@ function BlogAdmin() {
   });
 
   const [err, setErr] = useState(null);
+
+  const navigate = useNavigate();
 
   const { title, feelings, category, body, image } = post;
 
@@ -38,7 +41,7 @@ function BlogAdmin() {
       async () => {
         //get url of an image
         const url = await getDownloadURL(storageRef);
-        await addDoc(collectionRef, {
+        const docRef = await addDoc(collectionRef, {
           title,
           feelings,
           category,
@@ -46,12 +49,9 @@ function BlogAdmin() {
           image: url,
           createdAt: serverTimestamp(),
         });
+        navigate(`/blogs/${docRef.id}`);
       }
     );
-
-    // console.log(post);
-    // const docRef = await addDoc(collection(db, "posts"), { ...post });
-    // console.log(docRef);
 
     setPost({
       title: "",

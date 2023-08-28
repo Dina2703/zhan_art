@@ -9,6 +9,7 @@ import Footer from "./comp/Footer";
 import Home from "./pages/Home";
 import BlogAdmin from "./pages/BlogAdmin";
 import NotFound from "./pages/NotFound";
+import BlogId from "./pages/BlogId";
 
 export const AdminContext = createContext();
 function App() {
@@ -33,11 +34,15 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs isAdmin={isAdmin} />} />
+
             <Route
               path="/blogs/admin"
               element={<BlogAdmin isAdmin={isAdmin} />}
             />
+
             <Route path="/login" element={<Login setIsAdmin={setIsAdmin} />} />
+            {isAdmin && <Route path="/blogs/:blogsId" element={<BlogId />} />}
+
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
