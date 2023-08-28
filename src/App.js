@@ -6,7 +6,7 @@ import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Header from "./comp/Header";
 import Footer from "./comp/Footer";
-import Home from "./comp/Home";
+import Home from "./pages/Home";
 import BlogAdmin from "./pages/BlogAdmin";
 import NotFound from "./pages/NotFound";
 

@@ -30,7 +30,7 @@ function ImageGrid({ setSelectedImg }) {
 
   return (
     <div
-      className=" min-h-screen grid md:grid-cols-2 lg:grid-cols-3   mx-auto   gap-5 
+      className=" min-h-screen  grid grid-cols-2 lg:grid-cols-3   mx-auto   gap-5  
     "
     >
       {docs &&
@@ -39,7 +39,7 @@ function ImageGrid({ setSelectedImg }) {
             whileHover={{ opacity: 1, cursor: "pointer" }}
             layout
             key={doc.id}
-            className="overflow-hidden shadow-customBoxShadow rounded-md h-0 py-[50%] px-0 relative opacity-[.9]"
+            className="overflow-hidden shadow-customBoxShadow  h-auto rounded-md   relative opacity-[.9]"
             onClick={() => setSelectedImg(doc.url)}
           >
             {isAdmin && (

@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { db, storage } from "../firebase/config";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { ref } from "firebase/storage";
 
 function BlogAdmin() {
   const [post, setPost] = useState({
@@ -8,8 +11,6 @@ function BlogAdmin() {
     body: "",
     banner: "",
   });
-  // const [file, setBannerImage] = useState("");
-  // const [error, setError] = useState("");
 
   const { title, feelings, category, body, banner } = post;
 
@@ -26,25 +27,27 @@ function BlogAdmin() {
     }));
   };
 
-  //list of allowed types of files
-  // const types = ["image/png", "image/jpeg"];
-
-  // function handleBannerUpload(e) {
-  //   // console.log("changed");
-  //   const selected = e.target.files[0];
-  //   if (selected && types.includes(selected.type)) {
-  //     setBannerImage(selected);
-  //     setError(null);
-  //   } else {
-  //     setBannerImage(null);
-  //     setError("Please, select an image file (png or jpeg)");
-  //   }
-  // }
-
-  const addPostToFirebase = (e) => {
+  const addPostToFirebase = async (e) => {
     e.preventDefault();
-    console.log(post);
-    console.log(banner);
+    if (banner) {
+      const storageRef = ref(storage, banner.name);
+    }
+    await addDoc(collection(db, "posts"), {
+      title,
+      feelings,
+      category,
+      body,
+      postedOn: serverTimestamp(),
+    });
+    // console.log(post);
+    // console.log(banner);
+    setPost({
+      title: "",
+      feelings: "",
+      category: "",
+      body: "",
+      banner: "",
+    });
   };
   return (
     <div className="relative flex flex-col  justify-center min-h-screen overflow-hidden">
