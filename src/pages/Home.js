@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 function Home() {
   const isAdmin = useContext(AdminContext);
+  console.log(isAdmin);
   const [selectedImg, setSelectedImg] = useState(null);
   return (
     <div className="text-center   font-mono py-6  text-slate-600 dark:text-white">

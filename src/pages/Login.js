@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  setPersistence,
+  signInWithEmailAndPassword,
+  browserSessionPersistence,
+} from "firebase/auth";
+
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -13,11 +19,14 @@ export default function Login({ setIsAdmin }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const auth = getAuth();
+
+    //   console.log(auth ? auth : "none");
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
+
         if (user) {
           setIsAdmin(true);
           navigate("/");
@@ -26,11 +35,11 @@ export default function Login({ setIsAdmin }) {
           navigate("");
         }
       })
+
       .catch((error) => {
         navigate("/");
       });
   };
-
   const handleToggle = () => {
     if (type === "password") {
       setIcon(FaEye);

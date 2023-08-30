@@ -16,6 +16,7 @@ function BlogAdmin() {
 
   const [err, setErr] = useState(null);
 
+  console.log(err);
   const navigate = useNavigate();
 
   const { title, feelings, category, body, image } = post;
@@ -32,8 +33,8 @@ function BlogAdmin() {
 
       (snap) => {
         const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-        // console.log(percentage);
-        // console.log(snap);
+        console.log(percentage);
+        console.log(snap);
       },
       (err) => {
         setErr(err);
