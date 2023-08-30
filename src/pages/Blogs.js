@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdviceCard from "../comp/AdviceCard";
 import Blog from "../comp/Blog";
 import { Link } from "react-router-dom";
 // import JokeCard from "../comp/JokeCard";
 import { motion } from "framer-motion";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 function Blogs({ isAdmin }) {
+  const [blogsData, setBlogs] = useState([]);
+
+  console.log(blogsData);
+  console.log(blogsData);
+  useEffect(() => {
+    const getPostsArray = async () => {
+      const querySnapShot = await getDocs(collection(db, "posts"));
+      // querySnapShot.docs.map((doc) => console.log(doc.data()));
+      setBlogs(
+        querySnapShot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            data: { ...doc.data() },
+          };
+        })
+      );
+    };
+    getPostsArray();
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,11 +48,16 @@ function Blogs({ isAdmin }) {
           <Link to={"/blogs/admin"}>add new blog</Link>
         </span>
       )}
-      <div className="grid items-center justify-center gap-x-2 gap-y-4  md:grid-cols-2 lg:grid-cols-3">
-        <Blog />
-        <Blog />
-        <Blog />
-      </div>
+
+      {blogsData.length > 0 ? (
+        <div className="cursor-pointer grid items-center justify-center gap-x-2 gap-y-4  md:grid-cols-2 lg:grid-cols-3">
+          {blogsData.map((eachBlog) => (
+            <Blog eachBlog={eachBlog.data} key={eachBlog.id} id={eachBlog.id} />
+          ))}
+        </div>
+      ) : (
+        <p className="text-center">No Posts</p>
+      )}
     </motion.div>
   );
 }

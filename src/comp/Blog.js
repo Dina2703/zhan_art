@@ -1,31 +1,37 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Blog() {
+function Blog({ eachBlog, id }) {
+  console.log(eachBlog);
+  const { category, image, body, title, feelings, createdAt } = eachBlog;
+
   return (
-    <div className="">
-      <div className="w-[330px] p-2">
-        <img
-          src="random.jpg"
-          alt=""
-          className=" object-cover w-[330px]  mb-1 rounded-sm "
-        />
+    <Link to={`/blogs/${id}`}>
+      <div>
+        <div className="relative overflow-hidden max-w-[330px] z-10">
+          <img
+            src={image}
+            alt=""
+            className=" object-cover w-full  mb-1 rounded-sm hover:scale-105 transition-all ease-in-out"
+          />
+        </div>
 
         <div className="flex gap-2 items-center  ">
-          <span className="font-bold text-[14px]">Travel</span> -
-          <span className="text-gray-500 text-[12px]">July 3, 2023</span>
+          <span className="font-bold text-[14px]">{category}</span> -
+          <span className="text-gray-500 text-[12px]">
+            {/* {new Date(createdAt.seconds * 1000).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })} */}
+          </span>
         </div>
         <div className="text-[14px] font-semibold pb-1 leading-[18px] ">
-          Your most unhappy customers are your greatest source of learning
+          {title}
         </div>
-        <p className="text-[12px] font-light line-clamp-3 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At doloribus
-          itaque officia deleniti molestias dolorum sint. Numquam omnis itaque
-          impedit repellat cum reprehenderit voluptatibus reiciendis. Vel
-          temporibus laboriosam minus cupiditate voluptatem aliquam dolor cum
-          esse nemo distinctio, voluptate dolorem facere.
-        </p>
+        <p className="text-[12px] font-light line-clamp-3 ">{body}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 
-function Blog() {
+function Blog({ blogsData }) {
   const [blog, setPost] = useState({});
   const [laoding, setLoading] = useState(true);
 
@@ -32,7 +32,7 @@ function Blog() {
         {blog.title}
       </div>
       <div className="flex md:flex-row md:gap-10 flex-col ">
-        <img src={blog.image} alt="" className="w-auto h-[400px]" />
+        <img src={blog.image} alt="" className="w-auto h-[330px] " />
         <div className="flex-1 py-6 text-center md:text-left">
           <div className="flex gap-2 items-center  ">
             {/* <span className="font-bold text-xs ">
@@ -41,13 +41,11 @@ function Blog() {
             </span> */}
           </div>
 
-          <p className="text-[12px] font-light line-clamp-3 ">{blog.body}</p>
+          <p className="text-xs  font-light ">{blog.body}</p>
 
           <span className="text-gray-500 text-[12px] my-10 pr-10 float-right">
             {" "}
-            {new Date(blog.createdAt.seconds * 1000).toLocaleDateString(
-              "en-US"
-            )}
+            /
           </span>
         </div>
       </div>
