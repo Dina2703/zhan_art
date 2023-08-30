@@ -3,10 +3,16 @@ import AdviceCard from "../comp/AdviceCard";
 import Blog from "../comp/Blog";
 import { Link } from "react-router-dom";
 // import JokeCard from "../comp/JokeCard";
+import { motion } from "framer-motion";
 
 function Blogs({ isAdmin }) {
   return (
-    <div className="flex flex-col gap-10 h-fit">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 2 }}
+      className="flex flex-col gap-10 h-fit"
+    >
       <div className="flex flex-col md:flex-row-reverse justify-center gap-7 items-center mt-10">
         <AdviceCard />
         {/* <JokeCard /> */}
@@ -26,7 +32,7 @@ function Blogs({ isAdmin }) {
         <Blog />
         <Blog />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

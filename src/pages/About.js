@@ -1,8 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function About() {
   return (
-    <div className="flex-1">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 2 }}
+      className="flex-1"
+    >
       <div className="flex lg:flex-row flex-col  gap-10 items-center text-center lg:text-left justify-center  ">
         <div className="flex-1 px-5 lg:px-0 lg:mr-10 mt-5 lg:mt-10">
           <img src="avatar.jpg" alt="Zhan Khvan" />
@@ -24,7 +30,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
