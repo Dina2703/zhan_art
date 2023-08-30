@@ -51,7 +51,7 @@ function ImageGrid({ setSelectedImg }) {
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 2 }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
               src={doc.url}
               alt="Zhan artwork"
               className="min-w-[100%] min-h-[100%] max-w-[100%] absolute top-0 left-0"

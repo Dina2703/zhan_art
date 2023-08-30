@@ -32,17 +32,24 @@ function Home() {
           To learn to draw is to draw and draw and draw.
         </motion.span>
       </div>
-      <h1
-        className="text-xl font-semibold  mb-10 
-      "
+      <motion.div
+        initial={{ y: 200 }}
+        animate={{ y: 0 }}
+        transition={{ ease: "easeOut", duration: 1 }}
       >
-        Welcome to my gallery 🥴
-      </h1>
-      <div>{isAdmin && <UploadImg />}</div>
-      <ImageGrid setSelectedImg={setSelectedImg} />
-      {selectedImg && (
-        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
-      )}
+        {" "}
+        <h1
+          className="md:text-xl font-semibold  mb-10 
+      "
+        >
+          Welcome to my gallery 🥴
+        </h1>
+        <div>{isAdmin && <UploadImg />}</div>
+        <ImageGrid setSelectedImg={setSelectedImg} />
+        {selectedImg && (
+          <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+        )}
+      </motion.div>
     </div>
   );
 }
