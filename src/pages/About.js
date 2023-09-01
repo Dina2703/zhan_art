@@ -10,7 +10,7 @@ function About() {
       className="flex-1"
     >
       <div className="flex lg:flex-row flex-col  gap-10 items-center text-center lg:text-left justify-center  ">
-        <div className="flex-1 px-5 lg:px-0 lg:mr-10 mt-5 lg:mt-10">
+        <div className="flex-1 lg:px-0 lg:mr-10 mt-5 lg:mt-10">
           <img src="avatar.jpg" alt="Zhan Khvan" />
         </div>
         <div className="flex-1">

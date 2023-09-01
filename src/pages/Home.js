@@ -25,9 +25,10 @@ function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 2 }}
-          className="absolute 2xl:top-36  md:top-28 top-36 left-10  md:left-[58%] w-32  md:w-24 font-bold text-white text-xl md:text-base text-left"
+          className="absolute 2xl:top-36  md:top-28 top-32 left-10  md:left-[58%] w-52  md:w-40 font-bold text-white text-xl md:text-base text-left"
         >
-          To learn to draw is to draw and draw and draw.
+          Welcome to my digital sketchbook. I'm Zhan and I'm here to take you on
+          a visual adventure through my drawings.
         </motion.span>
       </div>
       <motion.div
@@ -37,10 +38,10 @@ function Home() {
       >
         {" "}
         <h1
-          className="md:text-xl font-semibold  mb-10 
+          className="md:text-xl lg:text-3xl font-semibold  mb-10 lg:my-20 
       "
         >
-          Welcome to my gallery 🥴
+          Explore My Gallery 🥴
         </h1>
         <div>{isAdmin && <UploadImg />}</div>
         <ImageGrid setSelectedImg={setSelectedImg} />

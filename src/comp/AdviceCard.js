@@ -17,7 +17,7 @@ function AdviceCard() {
   }, [clicked]);
 
   return (
-    <div className="w-60 h-40 md:w-72 md:h-40 text-center  rounded-lg  bg-gray-500 p-5 flex flex-col justify-around relative shadow-md shadow-slate-700">
+    <div className="w-full h-40 md:w-72 lg:w-96 lg:h-52 md:h-40 text-center  rounded-lg  bg-gray-500 p-5 flex flex-col justify-around relative shadow-md shadow-slate-700">
       <h3 className="text-cyan-400   text-xs md:text-base  tracking-[2px] capitalize font-semibold">
         Advice of the Day
       </h3>

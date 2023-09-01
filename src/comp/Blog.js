@@ -1,37 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
 
 function Blog({ eachBlog, id }) {
   console.log(eachBlog);
   const { category, image, body, title, feelings, createdAt } = eachBlog;
 
   return (
-    <Link to={`/blogs/${id}`}>
-      <div>
-        <div className="relative overflow-hidden max-w-[330px] z-10">
-          <img
-            src={image}
-            alt=""
-            className=" object-cover w-full  mb-1 rounded-sm hover:scale-105 transition-all ease-in-out"
-          />
-        </div>
+    <div
+      className="flex  flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700
+      "
+    >
+      <img
+        src={image}
+        alt=""
+        className=" object-cover w-full rounded-t-lg md:h-1/3   h-[300px]"
+      />
 
-        <div className="flex gap-2 items-center  ">
-          <span className="font-bold text-[14px]">{category}</span> -
-          <span className="text-gray-500 text-[12px]">
-            {new Date(createdAt?.seconds * 1000).toLocaleDateString("en-US", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            })}
-          </span>
-        </div>
-        <div className="text-[14px] font-semibold pb-1 leading-[18px] ">
+      <div className="flex flex-col justify-between p-4  leading-normal  ">
+        {" "}
+        <div className="mb-2 text-2xl  font-bold tracking-tight text-gray-600 dark:text-white">
           {title}
         </div>
-        <p className="text-[12px] font-light line-clamp-3 ">{body}</p>
+        <p className="text-[14px] line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400 ">
+          {body}
+        </p>
+        <span className="text-gray-500 text-[12px] text-end w-full my-2">
+          {new Date(createdAt?.seconds * 1000).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })}
+        </span>
+        <Link to={`/blogs/${id}`} className="flex items-center">
+          <button className="inline-flex w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-white hover:text-gray-600 border-2 border-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-white transition-all ease-in-out ">
+            read more <BsArrowRight className="ml-3" />
+          </button>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
 

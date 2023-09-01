@@ -34,10 +34,10 @@ function Blogs({ isAdmin }) {
       transition={{ ease: "easeOut", duration: 2 }}
       className="flex flex-col gap-10 h-fit"
     >
-      <div className="flex flex-col md:flex-row-reverse justify-center gap-7 items-center mt-10">
+      <div className="flex flex-col md:flex-row-reverse md:justify-around  items-center md:mt-20 mt-10 gap-10 lg:gap-0 ">
         <AdviceCard />
         {/* <JokeCard /> */}
-        <div className="md:w-2/5 w-full text-center md:text-left text-xs md:text-base">
+        <div className="md:w-2/5 w-full text-center md:text-left text-xs md:text-base ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsam
           nobis libero ad eveniet suscipit expedita earum illo porro doloremque
           ab, quaerat est sed qui aliquam totam quidem deserunt exercitationem?
@@ -48,9 +48,11 @@ function Blogs({ isAdmin }) {
           <Link to={"/blogs/admin"}>add new blog</Link>
         </span>
       )}
-
+      <div className=" lg:text-2xl text-xl  font-semibold  text-gray-600 text-center mt-5 md:mt-10 capitalize">
+        The World According to Me
+      </div>
       {blogsData.length > 0 ? (
-        <div className="cursor-pointer grid items-center justify-center gap-x-2 gap-y-4  md:grid-cols-2 lg:grid-cols-3">
+        <div className=" grid items-center justify-center gap-x-2 gap-y-4  md:grid-cols-2 lg:grid-cols-3 ">
           {blogsData.map((eachBlog) => (
             <Blog eachBlog={eachBlog.data} key={eachBlog.id} id={eachBlog.id} />
           ))}
