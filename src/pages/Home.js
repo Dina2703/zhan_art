@@ -15,20 +15,17 @@ function Home() {
         className="relative mb-10 
       "
       >
-        <motion.img
+        <motion.div
           initial={{ y: 200 }}
           animate={{ y: 0 }}
           transition={{ ease: "easeOut", duration: 0.8 }}
-          src="hero_pic.jpg
-    "
-          alt="main section"
-          className="object-fill  w-full md:h-[480px]  h-auto  brightness-50 "
-        />{" "}
+          className=" bg-bg-mobile md:bg-bg-desk w-full h-[550px] bg-cover  bg-center bg-no-repeat   brightness-50 "
+        ></motion.div>
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 2 }}
-          className="absolute 2xl:top-36  md:top-28 top-14  left-[58%] w-16  md:w-24 font-bold text-slate-100 text-[16px] md:text-base text-left"
+          className="absolute 2xl:top-36  md:top-28 top-36 left-10  md:left-[58%] w-32  md:w-24 font-bold text-white text-xl md:text-base text-left"
         >
           To learn to draw is to draw and draw and draw.
         </motion.span>

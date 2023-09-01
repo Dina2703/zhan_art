@@ -13,7 +13,7 @@ function Header() {
         Zhan KHVAN
       </NavLink>
 
-      <ul className="flex gap-5 lowercase items-start   font-mono cursor-pointer  font-semibold text-sm ">
+      <ul className="flex gap-5 lowercase items-center   font-mono cursor-pointer  font-semibold text-sm ">
         <NavLink
           to="/"
           style={({ isActive }) =>
@@ -39,10 +39,10 @@ function Header() {
         >
           <li className="  hover:dark:text-gray-400">blog</li>
         </NavLink>
+        <li>
+          <Switcher />
+        </li>
       </ul>
-      <div>
-        <Switcher />
-      </div>
     </nav>
   );
 }

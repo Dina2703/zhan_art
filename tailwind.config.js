@@ -4,11 +4,14 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      boxShadow: {
-        customBoxShadow:
-          " rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+      backgroundImage: {
+        "bg-mobile": "url('/public/mobile_hero_img.jpg')",
+        "bg-desk": "url('/public/hero_pic.jpg')",
       },
     },
+    boxShadow: {
+      customBoxShadow:
+        " rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+    },
   },
-  plugins: [],
 };

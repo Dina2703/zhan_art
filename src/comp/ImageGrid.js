@@ -30,8 +30,7 @@ function ImageGrid({ setSelectedImg }) {
 
   return (
     <div
-      id="image-container"
-      className=" 
+      className="columns-1 md:columns-2 lg:columns-3 2xl:columns-4
     "
     >
       {docs &&
@@ -55,6 +54,7 @@ function ImageGrid({ setSelectedImg }) {
               transition={{ ease: "easeOut", duration: 0.5 }}
               src={doc.url}
               alt="Zhan artwork"
+              className="w-full h-auto"
             />
           </motion.div>
         ))}
