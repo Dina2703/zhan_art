@@ -19,11 +19,11 @@ function Blog({ eachBlog, id }) {
         <div className="flex gap-2 items-center  ">
           <span className="font-bold text-[14px]">{category}</span> -
           <span className="text-gray-500 text-[12px]">
-            {/* {new Date(createdAt.seconds * 1000).toLocaleDateString("en-US", {
+            {new Date(createdAt?.seconds * 1000).toLocaleDateString("en-US", {
               day: "numeric",
               month: "short",
               year: "numeric",
-            })} */}
+            })}
           </span>
         </div>
         <div className="text-[14px] font-semibold pb-1 leading-[18px] ">

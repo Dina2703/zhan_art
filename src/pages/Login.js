@@ -1,10 +1,5 @@
 import { useState } from "react";
-import {
-  getAuth,
-  setPersistence,
-  signInWithEmailAndPassword,
-  browserSessionPersistence,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
