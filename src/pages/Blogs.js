@@ -48,11 +48,11 @@ function Blogs({ isAdmin }) {
           <Link to={"/blogs/admin"}>add new blog</Link>
         </span>
       )}
-      <div className=" lg:text-2xl text-xl  font-semibold  text-gray-600 text-center mt-5 md:mt-10 capitalize">
+      <div className=" lg:text-2xl text-xl  font-semibold  dark:text-white text-gray-600 text-center mt-5 md:mt-10 capitalize">
         The World According to Me
       </div>
       {blogsData.length > 0 ? (
-        <div className=" grid items-center justify-center gap-x-2 gap-y-4  md:grid-cols-2 lg:grid-cols-3 ">
+        <div className=" grid items-center justify-center md:gap-x-6  md:gap-y-10 gap-y-3 md:grid-cols-2 lg:grid-cols-3 ">
           {blogsData.map((eachBlog) => (
             <Blog eachBlog={eachBlog.data} key={eachBlog.id} id={eachBlog.id} />
           ))}

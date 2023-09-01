@@ -30,7 +30,7 @@ const UploadImg = () => {
             onChange={handleChange}
             className="hidden bg"
           />
-          <div className="rounded-full border shadow-md p-2 w-10 h-10 mx-auto my-5 lg:my-8 flex items-center justify-center cursor-pointer hover:bg-red-100">
+          <div className="rounded-full border shadow-md p-2 w-10 h-10 mx-auto my-5 lg:my-8 flex items-center justify-center cursor-pointer hover:bg-cyan-100">
             <span className="font-semibold text-2xl ">+</span>
           </div>
         </label>

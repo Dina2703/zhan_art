@@ -25,7 +25,7 @@ function Header() {
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "border-b-4 dark:border-gray-400 border-gray-500" : ""
+            isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
           }
         >
           <li className="  hover:dark:text-gray-400">about</li>
@@ -34,7 +34,7 @@ function Header() {
         <NavLink
           to="/blogs"
           className={({ isActive }) =>
-            isActive ? "border-b-4 dark:border-gray-400 border-gray-500" : ""
+            isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
           }
         >
           <li className="  hover:dark:text-gray-400">blog</li>

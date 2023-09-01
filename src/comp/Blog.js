@@ -8,24 +8,24 @@ function Blog({ eachBlog, id }) {
 
   return (
     <div
-      className="flex  flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700
+      className="flex h-[400px] flex-col  items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700
       "
     >
       <img
         src={image}
         alt=""
-        className=" object-cover w-full rounded-t-lg md:h-1/3   h-[300px]"
+        className=" object-cover w-full rounded-t-lg md:h-[200px]   h-[200px] object-center"
       />
 
-      <div className="flex flex-col justify-between p-4  leading-normal  ">
+      <div className="flex flex-col justify-between p-3  leading-normal  ">
         {" "}
-        <div className="mb-2 text-2xl  font-bold tracking-tight text-gray-600 dark:text-white">
+        <div className="md:text-2xl text-xl font-bold tracking-tight text-gray-600 dark:text-white ">
           {title}
         </div>
-        <p className="text-[14px] line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400 ">
+        <p className="text-[14px] line-clamp-2 mb-3 font-normal text-gray-700 dark:text-gray-400 ">
           {body}
         </p>
-        <span className="text-gray-500 text-[12px] text-end w-full my-2">
+        <span className="text-gray-500 text-[12px] text-end w-full ">
           {new Date(createdAt?.seconds * 1000).toLocaleDateString("en-US", {
             day: "numeric",
             month: "short",

@@ -16,7 +16,7 @@ function ProgressBar({ file, setFile }) {
     <motion.div
       initial={{ width: 0 }}
       animate={{ width: progress + "%" }}
-      className="h-1 mt-5 bg-red-400"
+      className="h-1 my-5 bg-cyan-400"
     ></motion.div>
   );
 }
