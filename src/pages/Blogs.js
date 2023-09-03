@@ -34,13 +34,14 @@ function Blogs({ isAdmin }) {
       transition={{ ease: "easeOut", duration: 2 }}
       className="flex flex-col gap-10 h-fit"
     >
-      <div className="flex flex-col md:flex-row-reverse md:justify-around  items-center md:mt-20 mt-10 gap-10 lg:gap-0 ">
+      <div className="flex flex-col-reverse md:flex-row-reverse md:justify-around  items-center md:mt-20 mt-10 gap-10 lg:gap-0 ">
         <AdviceCard />
         {/* <JokeCard /> */}
-        <div className="md:w-2/5 w-full text-center md:text-left text-xs md:text-base ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsam
-          nobis libero ad eveniet suscipit expedita earum illo porro doloremque
-          ab, quaerat est sed qui aliquam totam quidem deserunt exercitationem?
+        <div className="md:w-2/5 w-full text-center md:text-left text-sx md:text-base ">
+          Step into the world of my post page, where every scroll is a new
+          adventure waiting to happen! 🌟🚀 So, stay tuned for a dose of
+          intriguing stories, insightful tips, and perhaps a few surprises along
+          the way. 💡🌍✨
         </div>
       </div>
       {isAdmin && (

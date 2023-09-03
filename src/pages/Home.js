@@ -1,14 +1,34 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import UploadImg from "../comp/Upload";
 import { AdminContext } from "../App";
 import ImageGrid from "../comp/ImageGrid";
 import Modal from "../comp/Modal";
 import { motion } from "framer-motion";
+import { FaArrowDown } from "react-icons/fa";
 
 function Home() {
   const isAdmin = useContext(AdminContext);
-  console.log(isAdmin);
   const [selectedImg, setSelectedImg] = useState(null);
+  const [isVisible, setIsVisible] = useState(true);
+  console.log(isAdmin);
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
+
+  const listenToScroll = () => {
+    let heightToHideFrom = 200;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+      isVisible && setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  };
+
   return (
     <div className="text-center   font-mono py-6  text-slate-600 dark:text-white">
       <div
@@ -36,7 +56,12 @@ function Home() {
         animate={{ y: 0 }}
         transition={{ ease: "easeOut", duration: 1 }}
       >
-        {" "}
+        {isVisible && (
+          <div className="flex items-center justify-center my-5  ">
+            <FaArrowDown className="text-xl animate-bounce" />
+          </div>
+        )}
+
         <h1
           className="md:text-xl lg:text-3xl font-semibold  mb-10 lg:my-20 
       "
