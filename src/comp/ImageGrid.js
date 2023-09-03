@@ -39,7 +39,7 @@ function ImageGrid({ setSelectedImg }) {
             whileHover={{ opacity: 1, cursor: "pointer" }}
             layout
             key={doc.id}
-            className="overflow-hidden shadow-customBoxShadow bg-gray-200 px-3  m-2 rounded-md   relative opacity-[1]   "
+            className="overflow-hidden shadow-customBoxShadow bg-gray-200  mb-4 rounded-md   relative opacity-[1]   "
             onClick={() => setSelectedImg(doc.url)}
           >
             {isAdmin && (

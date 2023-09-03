@@ -27,6 +27,7 @@ function Blogs({ isAdmin }) {
     };
     getPostsArray();
   }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -53,7 +54,7 @@ function Blogs({ isAdmin }) {
         The World According to Me
       </div>
       {blogsData.length > 0 ? (
-        <div className=" grid items-center justify-center md:gap-x-6  md:gap-y-10 gap-y-3 md:grid-cols-2 lg:grid-cols-3 ">
+        <div className=" grid items-center justify-center md:gap-x-6  md:gap-y-10 gap-y-3  md:grid-cols-2 lg:grid-cols-3 ">
           {blogsData.map((eachBlog) => (
             <Blog eachBlog={eachBlog.data} key={eachBlog.id} id={eachBlog.id} />
           ))}

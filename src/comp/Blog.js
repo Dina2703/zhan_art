@@ -1,20 +1,36 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import { FaTrash } from "react-icons/fa";
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
+import { AdminContext } from "../App";
 
 function Blog({ eachBlog, id }) {
   console.log(eachBlog);
   const { category, image, body, title, feelings, createdAt } = eachBlog;
 
+  const isAdmin = useContext(AdminContext);
+  const deletePost = async (id) => {
+    await deleteDoc(doc(db, "posts", id));
+  };
+
   return (
     <div
-      className="flex h-[400px] flex-col  items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700
+      className="flex h-auto flex-col  items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700 relative
       "
     >
+      {isAdmin && (
+        <FaTrash
+          className="absolute z-10 top-2 right-2 cursor-pointer text-red-500 "
+          onClick={() => deletePost(id)}
+        />
+      )}
+
       <img
         src={image}
         alt=""
-        className=" object-cover w-full rounded-t-lg md:h-[200px]   h-[200px] object-center"
+        className=" object-cover  w-full h-52 rounded-t-lg   object-center"
       />
 
       <div className="flex flex-col justify-between p-3  leading-normal  ">
