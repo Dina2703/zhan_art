@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaTrash } from "react-icons/fa";
 import { useContext } from "react";
 import { AdminContext } from "../App";
-// import Gallery from "react-photo-gallery";
+
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
