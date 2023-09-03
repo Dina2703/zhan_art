@@ -22,7 +22,7 @@ function About() {
             Hi
           </h1>
           <div>
-            <p className="text-[16px] leading-normal">
+            <p className="text-[16px] leading-normal mt-6 text-left ">
               I'm a Roblox aficionado, conquering virtual worlds with my friends
               and taking on epic challenges. <br />
               When I'm not in the gaming universe,I'm having a riot of

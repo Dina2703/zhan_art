@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "bg-mobile": "url('/public/mobile_hero_img.jpg')",
-        "bg-desk": "url('/public/hero_pic.jpg')",
+        "bg-desk": "url('/public/hero_pic3.jpg')",
       },
     },
     boxShadow: {

@@ -39,16 +39,16 @@ function Home() {
           initial={{ y: 200 }}
           animate={{ y: 0 }}
           transition={{ ease: "easeOut", duration: 0.8 }}
-          className=" bg-bg-mobile md:bg-bg-desk w-full h-[550px] bg-cover  bg-center bg-no-repeat   brightness-50 "
+          className=" bg-bg-mobile md:bg-bg-desk w-full md:h-[500px] h-[480px] bg-cover  bg-top bg-no-repeat   brightness-110 "
         ></motion.div>
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 2 }}
-          className="absolute 2xl:top-36  md:top-28 top-32 left-10  md:left-[58%] w-52  md:w-40 font-bold text-white text-xl md:text-base text-left"
+          className="absolute 2xl:top-36  md:top-28 bottom-10 left-10 lg:left-[50%] md:left-[40%] w-52  md:w-80 font-bold md:text-gray-900 text-white lg:text-xl md:text-base text-left"
         >
-          Welcome to my digital sketchbook. I'm Zhan and I'm here to take you on
-          a visual adventure through my drawings.
+          Welcome to my digital sketchbook. <br /> I'm Zhan and I'm here to take
+          you on a visual adventure through my drawings.
         </motion.span>
       </div>
       <motion.div
@@ -57,7 +57,7 @@ function Home() {
         transition={{ ease: "easeOut", duration: 1 }}
       >
         {isVisible && (
-          <div className="flex items-center justify-center my-5  ">
+          <div className="flex items-center justify-center my-5 ">
             <FaArrowDown className="text-xl animate-bounce" />
           </div>
         )}
