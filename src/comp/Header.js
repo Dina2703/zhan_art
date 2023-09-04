@@ -4,46 +4,53 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <nav className="flex  justify-between md:items-end items-center py-4  gap-5 md:gap-10 ">
-      <NavLink
-        to="/"
-        className="text-3xl font-bold flex-1  uppercase tracking-wide  
-      "
-      >
-        Zhan KHVAN
-      </NavLink>
-
-      <ul className="flex gap-5 lowercase items-end   font-mono cursor-pointer  font-semibold text-sm ">
+    <div className="relative">
+      <nav className="flex  flex-col md:flex-row md:justify-between md:items-end items-center py-4  gap-5 md:gap-10">
         <NavLink
           to="/"
-          style={({ isActive }) =>
-            isActive ? { display: "none" } : { display: "inline-block" }
-          }
+          className="text-3xl font-bold flex-1  uppercase tracking-wide   w-full
+      "
         >
-          <li className="  hover:dark:text-gray-400">home</li>
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
-          }
-        >
-          <li className="  hover:dark:text-gray-400">about</li>
+          Zhan KHVAN
         </NavLink>
 
-        <NavLink
-          to="/blogs"
-          className={({ isActive }) =>
-            isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
-          }
-        >
-          <li className="  hover:dark:text-gray-400">blog</li>
-        </NavLink>
-        <li>
+        <ul className="flex gap-5 lowercase items-end    font-mono cursor-pointer  font-semibold text-sm  ">
+          <NavLink
+            to="/"
+            style={({ isActive }) =>
+              isActive ? { display: "none" } : { display: "inline-block" }
+            }
+          >
+            <li className="  hover:dark:text-gray-400">home</li>
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
+            }
+          >
+            <li className="  hover:dark:text-gray-400">about</li>
+          </NavLink>
+
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) =>
+              isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
+            }
+          >
+            <li className="  hover:dark:text-gray-400">blog</li>
+          </NavLink>
+        </ul>
+
+        <div className="hidden md:block">
           <Switcher />
-        </li>
-      </ul>
-    </nav>
+        </div>
+      </nav>
+
+      <div className="block absolute top-5 right-5 md:hidden">
+        <Switcher />
+      </div>
+    </div>
   );
 }
 
