@@ -38,7 +38,7 @@ function Blogs({ isAdmin }) {
       <div className="flex flex-col-reverse md:flex-row-reverse md:justify-around  items-center md:mt-20 mt-10 gap-10 lg:gap-0 ">
         <AdviceCard />
         {/* <JokeCard /> */}
-        <div className="md:w-2/5 w-full text-center md:text-left text-sx md:text-base ">
+        <div className="md:w-2/5 w-full text-center md:text-left text-sx font-thin ">
           Step into the world of my post page, where every scroll is a new
           adventure waiting to happen! 🌟🚀 So, stay tuned for a dose of
           intriguing stories, insightful tips, and perhaps a few surprises along
@@ -50,7 +50,7 @@ function Blogs({ isAdmin }) {
           <Link to={"/blogs/admin"}>add new blog</Link>
         </span>
       )}
-      <div className=" lg:text-2xl text-xl  font-semibold  dark:text-white text-gray-600 text-center mt-5 md:mt-10 capitalize">
+      <div className=" lg:text-2xl text-xl  font-semibold  dark:text-white text-gray-600 text-center mt-10 ">
         The World According to Me
       </div>
       {blogsData.length > 0 ? (

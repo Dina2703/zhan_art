@@ -45,7 +45,7 @@ function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 2 }}
-          className="absolute 2xl:top-36  md:top-28  bottom-16 left-10 lg:left-[50%] md:left-[40%] w-48  md:w-80 font-bold md:text-gray-900 text-white lg:text-xl md:text-base text-left"
+          className="absolute 2xl:top-36  md:top-28  bottom-16 left-10 lg:left-[50%] md:left-[40%] w-48  md:w-80 font-thin md:text-gray-900 text-white lg:text-xl md:text-base text-left"
         >
           Welcome to my digital sketchbook. <br /> I'm Zhan and I'm here to take
           you on a visual adventure through my drawings.

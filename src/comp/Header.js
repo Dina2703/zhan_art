@@ -14,7 +14,7 @@ function Header() {
           Zhan KHVAN
         </NavLink>
 
-        <ul className="flex gap-5 lowercase items-end    font-mono cursor-pointer  font-semibold text-sm  ">
+        <ul className="flex gap-5 lowercase items-end    font-mono cursor-pointer  font-normal text-sm  ">
           <NavLink
             to="/"
             style={({ isActive }) =>
