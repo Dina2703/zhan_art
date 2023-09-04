@@ -8,7 +8,7 @@ function Header() {
       <nav className="flex  flex-col md:flex-row md:justify-between md:items-end items-center py-4  gap-5 md:gap-10">
         <NavLink
           to="/"
-          className="text-3xl font-bold flex-1  uppercase tracking-wide   w-full
+          className="md:text-3xl text-4xl font-bold flex-1  uppercase tracking-wide   w-full
       "
         >
           Zhan KHVAN
@@ -43,12 +43,12 @@ function Header() {
         </ul>
 
         <div className="hidden md:block">
-          <Switcher />
+          <Switcher iconSize={30} />
         </div>
       </nav>
 
-      <div className="block absolute top-5 right-5 md:hidden">
-        <Switcher />
+      <div className="block absolute top-5 right-5 md:hidden ">
+        <Switcher iconSize={23} />
       </div>
     </div>
   );
