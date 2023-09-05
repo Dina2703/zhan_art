@@ -30,7 +30,7 @@ function Blog({ blogsData }) {
 
   return (
     <div className="">
-      <div className="text-2xl font-normal pb-1 leading-8 text-center mt-5 mb-10 capitalize">
+      <div className="text-2xl font-normal pb-1  text-center mt-5 mb-10 capitalize  leading-[1.2em]  tracking-[.02em]">
         {blog?.title}
       </div>
       <div className="flex md:flex-row  md:gap-10 flex-col items-center">
@@ -57,7 +57,7 @@ function Blog({ blogsData }) {
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ ease: "easeOut", duration: 1 }}
-            className="text-[18px]  font-light lg:w-2/3 w-full"
+            className="text-[16px]   leading-[1.8em] mt-2 font-light tracking-[.02em] lg:w-2/3 w-full text-justify"
           >
             {blog.body}
           </motion.p>
