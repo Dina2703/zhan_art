@@ -1,5 +1,5 @@
 import Login from "./pages/Login";
-
+import "react-toastify/dist/ReactToastify.css";
 import { createContext, useState } from "react";
 import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import About from "./pages/About";

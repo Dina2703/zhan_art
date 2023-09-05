@@ -4,7 +4,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 function BlogAdmin() {
   const [post, setPost] = useState({
@@ -25,43 +25,53 @@ function BlogAdmin() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const fileName = `${image.name}-${uuidv4()}`;
-    const storageRef = ref(storage, "image/" + fileName);
-    const collectionRef = collection(db, "posts");
-    const uploadTask = uploadBytesResumable(storageRef, image);
-    uploadTask.on(
-      "state_changed",
+    if (
+      title.length <= 0 ||
+      feelings.length <= 0 ||
+      category.length <= 0 ||
+      body.length <= 0 ||
+      image.length <= 0
+    ) {
+      toast("Please, fill out all the fields");
+    } else {
+      const fileName = `${image.name}-${uuidv4()}`;
+      const storageRef = ref(storage, "image/" + fileName);
+      const collectionRef = collection(db, "posts");
+      const uploadTask = uploadBytesResumable(storageRef, image);
+      uploadTask.on(
+        "state_changed",
 
-      (snap) => {
-        const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-        console.log(percentage);
-        console.log(snap);
-      },
-      (err) => {
-        setErr(err);
-      },
-      async () => {
-        //get url of an image
-        const url = await getDownloadURL(storageRef);
-        const docRef = await addDoc(collectionRef, {
-          title,
-          feelings,
-          category,
-          body,
-          image: url,
-          createdAt: serverTimestamp(),
-        });
-        navigate(`/blogs/${docRef.id}`);
-      }
-    );
+        (snap) => {
+          const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+          console.log(percentage);
+          console.log(snap);
+        },
+        (err) => {
+          setErr(err);
+        },
+        async () => {
+          //get url of an image
+          const url = await getDownloadURL(storageRef);
+          const docRef = await addDoc(collectionRef, {
+            title,
+            feelings,
+            category,
+            body,
+            image: url,
+            createdAt: serverTimestamp(),
+          });
+          navigate(`/blogs/${docRef.id}`);
+        }
+      );
 
-    setPost({
-      title: "",
-      feelings: "",
-      category: "",
-      body: "",
-      image: "",
-    });
+      setPost({
+        title: "",
+        feelings: "",
+        category: "",
+        body: "",
+        image: "",
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -191,6 +201,7 @@ function BlogAdmin() {
           >
             PUBLISH
           </button>
+          <ToastContainer />
         </form>
       </div>
     </div>
