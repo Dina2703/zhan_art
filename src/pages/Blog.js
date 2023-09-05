@@ -29,8 +29,8 @@ function Blog({ blogsData }) {
   }
 
   return (
-    <div className="py-5 ">
-      <div className="text-2xl font-semibold pb-1 leading-[18px] text-center mt-5 mb-10 capitalize">
+    <div className="">
+      <div className="text-2xl font-normal pb-1 leading-8 text-center mt-5 mb-10 capitalize">
         {blog?.title}
       </div>
       <div className="flex md:flex-row  md:gap-10 flex-col items-center">

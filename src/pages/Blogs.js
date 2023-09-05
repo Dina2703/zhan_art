@@ -4,7 +4,7 @@ import Blog from "../comp/Blog";
 import { Link } from "react-router-dom";
 // import JokeCard from "../comp/JokeCard";
 import { motion } from "framer-motion";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 function Blogs({ isAdmin }) {
@@ -14,8 +14,11 @@ function Blogs({ isAdmin }) {
   console.log(blogsData);
   useEffect(() => {
     const getPostsArray = async () => {
-      const querySnapShot = await getDocs(collection(db, "posts"));
+      const postRef = await collection(db, "posts");
+
+      const q = query(postRef, orderBy("createdAt", "desc"));
       // querySnapShot.docs.map((doc) => console.log(doc.data()));
+      const querySnapShot = await getDocs(q);
       setBlogs(
         querySnapShot.docs.map((doc) => {
           return {
