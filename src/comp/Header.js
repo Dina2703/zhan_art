@@ -5,16 +5,16 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <div className="relative">
-      <nav className="flex  flex-col md:flex-row md:justify-between md:items-end items-center py-4  gap-5 md:gap-10">
+      <nav className="flex  flex-col md:flex-row md:justify-between md:items-end items-center py-4  gap-5 md:gap-10 mt-2 md:mt-0">
         <NavLink
           to="/"
-          className="md:text-3xl text-4xl font-bold flex-1  uppercase tracking-wide   w-full
+          className="md:text-3xl text-4xl font-[400] flex-1  uppercase tracking-wide   w-full
       "
         >
           Zhan KHVAN
         </NavLink>
 
-        <ul className="flex gap-5 lowercase items-end    font-mono cursor-pointer  font-normal text-sm  ">
+        <ul className="flex gap-5 lowercase items-end    font-light cursor-pointer   text-sm  ">
           <NavLink
             to="/"
             style={({ isActive }) =>

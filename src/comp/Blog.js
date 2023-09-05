@@ -36,7 +36,7 @@ function Blog({ eachBlog, id, setReset }) {
 
       <div className="flex flex-col justify-between p-3  leading-normal  ">
         {" "}
-        <div className=" text-sm font-[400] leading-[20px] text-gray-600 dark:text-white line-clamp-2 h-10">
+        <div className=" text-sm font-[600] leading-[20px] text-gray-600 dark:text-white line-clamp-2 h-10">
           {title}
         </div>
         <p className="text-[14px] line-clamp-2 mb-3 font-normal text-gray-700 dark:text-gray-400 ">
