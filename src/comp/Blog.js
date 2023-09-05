@@ -17,7 +17,7 @@ function Blog({ eachBlog, id }) {
 
   return (
     <div
-      className="flex h-96 flex-col  items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700 relative
+      className="flex  flex-col  items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700 relative
       "
     >
       {isAdmin && (
@@ -35,7 +35,7 @@ function Blog({ eachBlog, id }) {
 
       <div className="flex flex-col justify-between p-3  leading-normal  ">
         {" "}
-        <div className=" text-md font-bold tracking-tight text-gray-600 dark:text-white line-clamp-2 ">
+        <div className=" text-sm font-[400] leading-[20px] text-gray-600 dark:text-white line-clamp-2 h-10">
           {title}
         </div>
         <p className="text-[14px] line-clamp-2 mb-3 font-normal text-gray-700 dark:text-gray-400 ">
@@ -48,7 +48,7 @@ function Blog({ eachBlog, id }) {
             year: "numeric",
           })}
         </span>
-        <Link to={`/blogs/${id}`} className="flex items-center">
+        <Link to={`/blogs/${id}`} className="flex items-end">
           <button className="inline-flex w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-white hover:text-gray-600 border-2 border-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-white transition-all ease-in-out ">
             read more <BsArrowRight className="ml-3" />
           </button>

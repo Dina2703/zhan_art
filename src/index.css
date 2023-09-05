@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: rgb(55 65 81);
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -19,12 +23,12 @@ ul {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: rgb(71 85 105);
+    background-color: rgb(243 244 246);
   }
 }
 
 @media (prefers-color-scheme: light) {
   body {
-    background-color: rgb(237, 238, 240);
+    background-color: rgb(243 244 246);
   }
 }

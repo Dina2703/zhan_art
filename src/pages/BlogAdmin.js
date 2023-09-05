@@ -4,6 +4,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function BlogAdmin() {
   const [post, setPost] = useState({
@@ -105,7 +106,7 @@ function BlogAdmin() {
               </label>
             )}
           </div>
-          <div className="  flex items-end  flex-col lg:flex-row gap-3 ">
+          <div className="  flex md:items-end  flex-col lg:flex-row gap-3 ">
             <label
               htmlFor="title"
               className="w-3/12 font-bold text-base upper text-slate-500"
@@ -123,7 +124,7 @@ function BlogAdmin() {
               onChange={handleChange}
             />
           </div>
-          <div className="flex items-end  flex-col lg:flex-row gap-3">
+          <div className="flex md:items-end  flex-col lg:flex-row gap-3">
             {" "}
             <label
               htmlFor="emotion"
@@ -142,7 +143,7 @@ function BlogAdmin() {
               // onChange={handleChange}
             />
           </div>
-          <div className="flex items-end  flex-col lg:flex-row gap-3">
+          <div className="flex md:items-end  flex-col lg:flex-row gap-3">
             {" "}
             <label
               htmlFor="category"
