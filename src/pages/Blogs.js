@@ -9,6 +9,7 @@ import { db } from "../firebase/config";
 
 function Blogs({ isAdmin }) {
   const [blogsData, setBlogs] = useState([]);
+  const [reset, setReset] = useState(false);
 
   console.log(blogsData);
   console.log(blogsData);
@@ -30,6 +31,27 @@ function Blogs({ isAdmin }) {
     };
     getPostsArray();
   }, []);
+
+  useEffect(() => {
+    if (reset) {
+      const getPostsArray = async () => {
+        const postRef = await collection(db, "posts");
+
+        const q = query(postRef, orderBy("createdAt", "desc"));
+        // querySnapShot.docs.map((doc) => console.log(doc.data()));
+        const querySnapShot = await getDocs(q);
+        setBlogs(
+          querySnapShot.docs.map((doc) => {
+            return {
+              id: doc.id,
+              data: { ...doc.data() },
+            };
+          })
+        );
+      };
+      getPostsArray();
+    }
+  }, [reset]);
 
   return (
     <motion.div
@@ -59,7 +81,12 @@ function Blogs({ isAdmin }) {
       {blogsData.length > 0 ? (
         <div className=" grid items-center justify-center md:gap-x-6  md:gap-y-10 gap-y-3  md:grid-cols-2 lg:grid-cols-3 ">
           {blogsData.map((eachBlog) => (
-            <Blog eachBlog={eachBlog.data} key={eachBlog.id} id={eachBlog.id} />
+            <Blog
+              eachBlog={eachBlog.data}
+              key={eachBlog.id}
+              id={eachBlog.id}
+              setReset={setReset}
+            />
           ))}
         </div>
       ) : (
