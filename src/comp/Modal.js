@@ -12,7 +12,7 @@ function Modal({ selectedImg, setSelectedImg }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] z-50"
+      className="fixed top-0  left-0 w-full h-full bg-[rgba(0,0,0,0.5)] z-50"
       onClick={handleCloseModel}
     >
       <motion.img
@@ -31,7 +31,7 @@ function Modal({ selectedImg, setSelectedImg }) {
         }}
         src={selectedImg}
         alt="art name"
-        className="block max-w-[60%] max-h-[80%] my-16 mx-auto border-white border-[3px] shadow-[3px_5px_7px_rgba(0,0,0,0.5)]"
+        className="block max-w-[90%] max-h-[100%] md:my-10 my-16 mx-auto border-white border-[3px] shadow-[3px_5px_7px_rgba(0,0,0,0.5)]"
       />
     </motion.div>
   );
