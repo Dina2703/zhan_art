@@ -18,7 +18,7 @@ function Blog({ eachBlog, id, setReset }) {
 
   return (
     <div
-      className="flex  flex-col  items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700 relative
+      className="flex  flex-col   bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700 relative
       "
     >
       {isAdmin && (
@@ -36,10 +36,10 @@ function Blog({ eachBlog, id, setReset }) {
 
       <div className="flex flex-col justify-between p-3  leading-normal  ">
         {" "}
-        <div className=" text-sm font-[600] leading-[20px] text-gray-600 dark:text-white line-clamp-2 h-10">
+        <div className=" text-sm font-[600] leading-[20px] text-gray-600 dark:text-white line-clamp-2 h-8">
           {title}
         </div>
-        <p className="text-[14px] line-clamp-2 mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="text-[14px] line-clamp-2 mb-3 font-normal text-gray-700 dark:text-gray-400 h-8">
           {body}
         </p>
         <span className="text-gray-500 text-[12px] text-end w-full ">
