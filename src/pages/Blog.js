@@ -41,7 +41,7 @@ function Blog({ blogsData }) {
             transition={{ ease: "easeOut", duration: 1 }}
             src={blog.image}
             alt={blog.title}
-            className="w-auto h-[360px] ml-auto"
+            className="w-full h-auto ml-auto"
           />
         </div>
 

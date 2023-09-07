@@ -71,9 +71,11 @@ function Blogs({ isAdmin }) {
         </div>
       </div>
       {isAdmin && (
-        <span className="font-semibold  text-center rounded-full py-5 bg-gray-500 cursor-pointer text-white flex items-center justify-center text-lg">
-          <Link to={"/blogs/admin"}>add new blog</Link>
-        </span>
+        <Link to={"/blogs/admin"}>
+          <span className="font-semibold  text-center rounded-full py-5 bg-gray-500 cursor-pointer text-white flex items-center justify-center text-lg">
+            add new blog
+          </span>
+        </Link>
       )}
       <div className=" lg:text-2xl text-xl  font-normal   dark:text-white text-gray-600 text-center mt-10 ">
         The World According to Me
