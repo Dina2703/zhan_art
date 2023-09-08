@@ -39,7 +39,7 @@ function Blog({ eachBlog, id, setReset }) {
         <div className=" text-sm font-[600] leading-[20px] text-gray-600 dark:text-white line-clamp-2 h-8">
           {title}
         </div>
-        <p className="text-[14px] line-clamp-2 mb-3 font-normal text-gray-700 dark:text-gray-400 h-8">
+        <p className="text-[14px] line-clamp-2 mb-3 font-normal text-gray-700 dark:text-gray-400 h-9">
           {body}
         </p>
         <span className="text-gray-500 text-[12px] text-end w-full ">
