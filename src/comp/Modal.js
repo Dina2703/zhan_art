@@ -37,11 +37,22 @@ function Modal({ selectedImg, setSelectedImg }) {
           alt="art name"
           className=" object-cover  h-[80%] m-auto"
         />
-        <div className="h-20 p-3 w-[350px] md:w-[500px]  lg:w-[600px] m-auto">
-          <h3 className=" text-xs font-serif ">{selectedImg.type}</h3>{" "}
+        <div className="h-auto p-3 w-[350px] md:w-[500px]  lg:w-[600px] m-auto">
+          <p className=" text-xs font-serif lowercase">{selectedImg.type}</p>{" "}
           <p className="text-[14px] leading-[1.6em] mt-3 font-light tracking-[.02em] text-justify">
             {selectedImg.comment ? selectedImg.comment : ""}
           </p>
+          <span className="float-right text-[12px]">
+            {" "}
+            {new Date(selectedImg.createdAt?.seconds * 1000).toLocaleDateString(
+              "en-US",
+              {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              }
+            )}
+          </span>
         </div>
       </motion.div>
     </motion.div>

@@ -47,7 +47,10 @@ function ImageGrid({ setSelectedImg }) {
                 className="absolute z-10 top-2 right-2 cursor-pointer text-red-500 "
                 onClick={() => deleteImg(doc.id)}
               />
-            )}
+            )}{" "}
+            <span className="right-2 bottom-2 absolute text-[10px] lowercase text-slate-100">
+              {doc.type}
+            </span>
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
