@@ -35,9 +35,14 @@ function Modal({ selectedImg, setSelectedImg }) {
 
           src={selectedImg.url}
           alt="art name"
-          className=" object-cover  h-[90%] m-auto"
+          className=" object-cover  h-[80%] m-auto"
         />
-        <p className="h-20 p-3   text-white">{selectedImg.id}</p>
+        <div className="h-20 p-3 w-[350px] md:w-[500px]  lg:w-[600px] m-auto">
+          <h3 className=" text-xs font-serif ">{selectedImg.type}</h3>{" "}
+          <p className="text-[14px] leading-[1.6em] mt-3 font-light tracking-[.02em] text-justify">
+            {selectedImg.comment ? selectedImg.comment : ""}
+          </p>
+        </div>
       </motion.div>
     </motion.div>
   );
