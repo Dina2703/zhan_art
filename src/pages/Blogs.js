@@ -11,8 +11,6 @@ function Blogs({ isAdmin }) {
   const [blogsData, setBlogs] = useState([]);
   const [reset, setReset] = useState(false);
 
-  console.log(blogsData);
-  console.log(blogsData);
   useEffect(() => {
     const getPostsArray = async () => {
       const postRef = await collection(db, "posts");
@@ -35,7 +33,7 @@ function Blogs({ isAdmin }) {
   useEffect(() => {
     if (reset) {
       const getPostsArray = async () => {
-        const postRef = await collection(db, "posts");
+        const postRef = collection(db, "posts");
 
         const q = query(postRef, orderBy("createdAt", "desc"));
         // querySnapShot.docs.map((doc) => console.log(doc.data()));

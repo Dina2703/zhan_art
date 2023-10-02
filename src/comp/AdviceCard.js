@@ -5,9 +5,9 @@ import { lifeLaws } from "../laws";
 import { GrLinkNext } from "react-icons/gr";
 
 function AdviceCard() {
-  const [advice, setAdvice] = useState({});
+  // const [advice, setAdvice] = useState({});
   const [clicked, setClicked] = useState(false);
-  const [error, setError] = useState();
+  // const [error, setError] = useState();
   const [selectedItem, setSelectedItem] = useState("");
 
   // console.log(advice);

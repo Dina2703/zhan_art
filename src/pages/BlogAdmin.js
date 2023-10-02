@@ -42,9 +42,9 @@ function BlogAdmin() {
         "state_changed",
 
         (snap) => {
-          const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-          console.log(percentage);
-          console.log(snap);
+          // const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+          // console.log(percentage);
+          // console.log(snap);
         },
         (err) => {
           setErr(err);

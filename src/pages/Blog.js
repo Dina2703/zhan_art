@@ -23,7 +23,7 @@ function Blog({ blogsData }) {
     fetchPost();
   }, [params.blogsId]);
 
-  console.log(blog);
+  // console.log(blog);
   if (laoding) {
     <p>Loading...😈</p>;
   }

@@ -11,17 +11,17 @@ import { db } from "../firebase/config";
 function ImageGrid({ setSelectedImg }) {
   const isAdmin = useContext(AdminContext);
   const { docs } = useFirestore("images");
-  // console.log(docs);
+  console.log(docs);
 
-  const photos2 = docs.map((doc) => {
-    return {
-      src: doc.url,
-      width: +Math.floor(Math.random() * 6) + 3,
-      height: +Math.floor(Math.random() * 4) + 2,
-    };
-  });
-  console.log(photos2);
-  console.log(Math.floor(Math.random() * 7));
+  // const photos2 = docs.map((doc) => {
+  //   return {
+  //     src: doc.url,
+  //     width: +Math.floor(Math.random() * 6) + 3,
+  //     height: +Math.floor(Math.random() * 4) + 2,
+  //   };
+  // });
+  // console.log(photos2);
+  // console.log(Math.floor(Math.random() * 7));
 
   //delete image
   const deleteImg = async (id) => {
@@ -40,7 +40,7 @@ function ImageGrid({ setSelectedImg }) {
             layout
             key={doc.id}
             className="overflow-hidden shadow-customBoxShadow bg-gray-200  mb-4 rounded-md   relative opacity-[1]   "
-            onClick={() => setSelectedImg(doc.url)}
+            onClick={() => setSelectedImg(doc)}
           >
             {isAdmin && (
               <FaTrash

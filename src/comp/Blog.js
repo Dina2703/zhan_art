@@ -7,7 +7,7 @@ import { db } from "../firebase/config";
 import { AdminContext } from "../App";
 
 function Blog({ eachBlog, id, setReset }) {
-  console.log(eachBlog);
+  // console.log(eachBlog);
   const { category, image, body, title, feelings, createdAt } = eachBlog;
 
   const isAdmin = useContext(AdminContext);
