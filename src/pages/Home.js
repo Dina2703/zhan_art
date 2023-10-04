@@ -65,7 +65,7 @@ function Home() {
           className="md:text-xl  font-normal  mb-10 lg:my-16 
       "
         >
-          Explore My Gallery 🥴
+          {isAdmin ? "Upload New Project" : " Explore My Gallery 🥴"}
         </h1>
         <div>{isAdmin && <UploadImg />}</div>
         <ImageGrid setSelectedImg={setSelectedImg} />
