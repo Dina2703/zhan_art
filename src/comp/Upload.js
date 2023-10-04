@@ -1,6 +1,10 @@
 import { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { toast, ToastContainer } from "react-toastify";
+import { v4 as uuidv4 } from "uuid";
+import { db, storage } from "../firebase/config";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 const UploadImg = () => {
   const [file, setFile] = useState("");
@@ -25,7 +29,37 @@ const UploadImg = () => {
     if (artType.length <= 0 || comment.length <= 0) {
       toast("Please, fill out all the fields");
     }
-    console.log(artType, comment, file);
+    //Upload new project data to Firebase
+    const fileName = `${file.name}-${uuidv4()}`;
+    const storageRef = ref(storage, "url/" + fileName);
+    const collectionRef = collection(db, "images");
+    const uploadTask = uploadBytesResumable(storageRef, file);
+    uploadTask.on(
+      "state_changed",
+      (snap) => {
+        // const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+        // console.log(percentage);
+        // console.log(snap);
+      },
+      (err) => {
+        setError(err);
+      },
+      async () => {
+        //get url of an image
+        const url = await getDownloadURL(storageRef);
+        await addDoc(collectionRef, {
+          comment,
+          type: artType,
+          url,
+          createdAt: serverTimestamp(),
+        });
+      }
+    );
+
+    //reset-form
+    setFile("");
+    setArtType("");
+    setComment("");
   };
 
   return (
@@ -93,6 +127,7 @@ const UploadImg = () => {
         >
           PUBLISH
         </button>
+        <ToastContainer />
       </form>
     </div>
   );
