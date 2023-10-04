@@ -11,7 +11,7 @@ import { db } from "../firebase/config";
 function ImageGrid({ setSelectedImg }) {
   const isAdmin = useContext(AdminContext);
   const { docs } = useFirestore("images");
-  console.log(docs);
+  // console.log(docs);
 
   // const photos2 = docs.map((doc) => {
   //   return {

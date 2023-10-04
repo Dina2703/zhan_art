@@ -76,7 +76,7 @@ const UploadImg = () => {
             Type
           </label>
           <select
-            className="bg-gray-200  border-gray-400 border-b-2 outline-none px-3 py-1 text-sm md:w-96  w-64"
+            className="bg-gray-200 text-white dark:text-gray-600 border-gray-400 border-b-2 outline-none px-3 py-1 text-sm md:w-96  w-64"
             value={artType}
             name="artType"
             onChange={(e) => setArtType(e.target.value)}
