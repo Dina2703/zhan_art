@@ -12,7 +12,7 @@ function Modal({ selectedImg, setSelectedImg }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="fixed top-0  left-0 w-full h-full bg-[rgba(0,0,0,0.7)] z-50"
+      className="fixed top-0  left-0 w-full h-full bg-[rgba(0,0,0,0.8)] z-50"
       onClick={handleCloseModel}
     >
       <motion.div
@@ -23,23 +23,27 @@ function Modal({ selectedImg, setSelectedImg }) {
           stiffness: 260,
           damping: 50,
         }}
-        className="block h-screen w-auto p-10   "
+        className="flex flex-col lg:flex-row max-w-5xl  m-auto justify-center items-center h-full "
       >
-        <img
-          // initial={{ y: "-100vh" }}
-          // animate={{ y: 0 }}
-          // transition={{
-          //   ease: "easeIn",
-          //   duration: 0.3,
-          // }}
+        <div className=" md:w-[60%]   ">
+          {" "}
+          <img
+            // initial={{ y: "-100vh" }}
+            // animate={{ y: 0 }}
+            // transition={{
+            //   ease: "easeIn",
+            //   duration: 0.3,
+            // }}
 
-          src={selectedImg.url}
-          alt="art name"
-          className=" object-cover  h-[80%] m-auto"
-        />
-        <div className="h-auto p-3 w-[350px] md:w-[500px]  lg:w-[600px] m-auto">
-          <p className=" text-xs font-serif lowercase">{selectedImg.type}</p>{" "}
-          <p className="text-[14px] leading-[1.6em] mt-3 font-light tracking-[.02em] text-justify">
+            src={selectedImg.url}
+            alt="art name"
+            className="p-1 "
+          />
+          <p className=" text-xs font-serif lowercase ">{selectedImg.type}</p>{" "}
+        </div>
+
+        <div className=" w-full md:w-[500px]  lg:w-[600px]   px-2">
+          <p className="text-[12px] md:text-[18px] leading-[1.6em] mt-3 font-light tracking-[.02em]  text-justify">
             {selectedImg.comment ? selectedImg.comment : ""}
           </p>
           <span className="float-right text-[12px]">
