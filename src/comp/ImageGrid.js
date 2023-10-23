@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaTrash } from "react-icons/fa";
 import { useContext } from "react";
 import { AdminContext } from "../App";
+import { getStorage, ref, deleteObject } from "firebase/storage";
 
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
@@ -11,6 +12,10 @@ import { db } from "../firebase/config";
 function ImageGrid({ setSelectedImg }) {
   const isAdmin = useContext(AdminContext);
   const { docs } = useFirestore("images");
+
+  //delete Art image from the firebase storage
+  const storage = getStorage();
+
   // console.log(docs);
 
   // const photos2 = docs.map((doc) => {
@@ -24,8 +29,18 @@ function ImageGrid({ setSelectedImg }) {
   // console.log(Math.floor(Math.random() * 7));
 
   //delete image
-  const deleteImg = async (id) => {
+  const deleteImg = async (id, fileName) => {
+    // console.log(id);
     await deleteDoc(doc(db, "images", id));
+
+    const itemRef = ref(storage, `drawings/${fileName}`);
+    deleteObject(itemRef)
+      .then(() => {
+        console.log("successfully deleted from firebase storage");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -45,7 +60,7 @@ function ImageGrid({ setSelectedImg }) {
             {isAdmin && (
               <FaTrash
                 className="absolute z-10 top-2 right-2 cursor-pointer text-red-500 "
-                onClick={() => deleteImg(doc.id)}
+                onClick={() => deleteImg(doc.id, doc.fileName)}
               />
             )}{" "}
             <span

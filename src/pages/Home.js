@@ -10,6 +10,7 @@ function Home() {
   const isAdmin = useContext(AdminContext);
   const [selectedImg, setSelectedImg] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
+  console.log(selectedImg);
 
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);

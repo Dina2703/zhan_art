@@ -31,7 +31,7 @@ const UploadImg = () => {
     }
     //Upload new project data to Firebase
     const fileName = `${file.name}-${uuidv4()}`;
-    const storageRef = ref(storage, "url/" + fileName);
+    const storageRef = ref(storage, "drawings/" + fileName);
     const collectionRef = collection(db, "images");
     const uploadTask = uploadBytesResumable(storageRef, file);
     uploadTask.on(
@@ -52,6 +52,7 @@ const UploadImg = () => {
           type: artType,
           url,
           createdAt: serverTimestamp(),
+          fileName,
         });
       }
     );
