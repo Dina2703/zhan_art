@@ -10,7 +10,7 @@ function About() {
       className="flex-1"
     >
       <div className="flex lg:flex-row flex-col   items-center text-center lg:text-left justify-center   xl:px-20 ">
-        <div className="lg:px-0 lg:mr-10 mt-5 lg:mt-10  ">
+        <div className="lg:px-0 lg:mr-10 mt-5 lg:mt-0">
           <img
             src="about_me.JPG"
             alt="Zhan Khvan"
@@ -37,7 +37,18 @@ function About() {
               for endless adventures. <br /> So, stick around, and you'll dive
               into my world of gaming, art, chess mastery, swimming, and
               culinary delights. Life is a grand adventure, and I'm here to make
-              every moment count, both on land and in the water!
+              every moment count, both on land and in the water! <br />
+              Wait! Wait! Have I told you about my little brother, the brilliant
+              programmer, who brings a ladder to his computer to access the
+              highest code level? 😂 <br /> Check out his website{" "}
+              <a
+                href="https://www.alankhvan.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold underline"
+              >
+                Alan Khvan
+              </a>
             </p>
           </div>
         </div>
