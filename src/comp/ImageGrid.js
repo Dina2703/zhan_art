@@ -76,6 +76,7 @@ function ImageGrid({ setSelectedImg }) {
               src={doc.url}
               alt="Zhan artwork"
               className="w-full h-auto hover:scale-105 transition-all ease-in-out "
+              loading="lazy"
             />
           </motion.div>
         ))}

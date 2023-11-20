@@ -42,6 +42,7 @@ function Blog({ blogsData }) {
             src={blog.image}
             alt={blog.title}
             className="w-full h-auto ml-auto"
+            loading="lazy"
           />
         </div>
 
