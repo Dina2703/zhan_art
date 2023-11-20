@@ -59,7 +59,7 @@ function Blogs({ isAdmin }) {
       className="flex flex-col gap-10 h-fit"
     >
       <div className="flex flex-col-reverse md:flex-row-reverse md:justify-around  items-center md:mt-20  gap-10 lg:gap-0 ">
-        <AdviceCard />
+        {/* <AdviceCard /> */}
         {/* <JokeCard /> */}
         <div className="md:w-2/5 w-full text-[18px] leading-[1.8em] mt-6 text-left font-light tracking-[.02em]">
           Step into the world of my post page, where every scroll is a new
