@@ -13,6 +13,7 @@ function Footer() {
           href="https://www.youtube.com/@Kindl58"
           target="_blank"
           rel="noreferrer"
+          aria-label="Youtube channel of Zhan Khvan"
         >
           <ImYoutube2 className="text-3xl text-red-500 cursor-pointer" />
         </a>

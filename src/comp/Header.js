@@ -15,31 +15,40 @@ function Header() {
         </NavLink>
 
         <ul className="flex gap-5 lowercase items-end    font-light cursor-pointer   text-sm  ">
-          <NavLink
-            to="/"
-            style={({ isActive }) =>
-              isActive ? { display: "none" } : { display: "inline-block" }
-            }
-          >
-            <li className="  hover:dark:text-gray-400">home</li>
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
-            }
-          >
-            <li className="  hover:dark:text-gray-400">about</li>
-          </NavLink>
-
-          <NavLink
-            to="/blogs"
-            className={({ isActive }) =>
-              isActive ? "border-b-2 dark:border-gray-400 border-gray-500" : ""
-            }
-          >
-            <li className="  hover:dark:text-gray-400">blog</li>
-          </NavLink>
+          <li className="  hover:dark:text-gray-400">
+            <NavLink
+              to="/"
+              style={({ isActive }) =>
+                isActive ? { display: "none" } : { display: "inline-block" }
+              }
+            >
+              home
+            </NavLink>
+          </li>
+          <li className="  hover:dark:text-gray-400">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "border-b-2 dark:border-gray-400 border-gray-500"
+                  : ""
+              }
+            >
+              about
+            </NavLink>
+          </li>
+          <li className="  hover:dark:text-gray-400">
+            <NavLink
+              to="/blogs"
+              className={({ isActive }) =>
+                isActive
+                  ? "border-b-2 dark:border-gray-400 border-gray-500"
+                  : ""
+              }
+            >
+              blog
+            </NavLink>
+          </li>
         </ul>
 
         <div className="hidden md:block">
