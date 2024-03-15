@@ -31,26 +31,24 @@ function Home() {
 
   return (
     <div className="text-center   font-mono md:py-6  text-slate-600 dark:text-white ">
-      <div
+      <motion.div
+        initial={{ y: 200 }}
+        animate={{ y: 0 }}
+        transition={{ ease: "easeOut", duration: 1 }}
         className="relative mb-10 shadow-clay bg-white p-12 rounded-3xl
       "
       >
-        <motion.div
-          initial={{ y: 200 }}
-          animate={{ y: 0 }}
-          transition={{ ease: "easeOut", duration: 0.8 }}
-          className=" bg-bg-mobile md:bg-bg-desk w-full md:h-[500px] h-[460px] bg-cover rounded-lg bg-top bg-no-repeat   brightness-110 "
-        ></motion.div>
+        <div className=" bg-bg-mobile md:bg-bg-desk w-full md:h-[500px] h-[460px] bg-cover rounded-lg bg-top bg-no-repeat   brightness-110 "></div>
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 2 }}
+          transition={{ ease: "easeOut", duration: 1.5 }}
           className="absolute 2xl:top-36  md:top-28  bottom-16 left-10 lg:left-[50%] md:left-[40%] w-48  md:w-60  md:text-[#c084fc]  dark:text-slate-600 text-white font-normal text-left md:text-xl"
         >
           Welcome to my digital sketchbook. <br /> I'm Zhan and I'm here to take
           you on a visual adventure through my drawings.
         </motion.span>
-      </div>
+      </motion.div>
       <motion.div
         initial={{ y: 200 }}
         animate={{ y: 0 }}

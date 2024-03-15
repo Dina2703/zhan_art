@@ -6,21 +6,21 @@ function About() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 2 }}
+      transition={{ ease: "easeOut", duration: 1 }}
       className="flex-1"
     >
-      <div className="flex lg:flex-row flex-col   items-center text-center lg:text-left justify-center   xl:px-20 ">
-        <div className="lg:px-0 lg:mr-10 mt-5 lg:mt-0">
+      <div className=" flex lg:flex-row flex-col   items-center text-center lg:text-left justify-center  gap-x-16 2xl:px-20 md:mt-10 ">
+        <div className="lg:px-0  mt-5 lg:mt-0">
           <img
             src="about_me.JPG"
             alt="Zhan Khvan"
-            className="w-auto h-[20em] lg:h-[550px]"
+            className="w-auto h-[20em] lg:h-[550px] rounded-2xl shadow-clay p-1"
           />
         </div>
         <div className="flex-1">
-          <h1 className="mb-5 text-2xl font-light hidden lg:block">Hi</h1>
+          <h1 className="mb-1 text-2xl font-light hidden lg:block">Hi</h1>
           <div>
-            <p className="text-[16px] leading-[1.8em] mt-6 font-light tracking-[.02em] text-justify">
+            <p className="text-[17px] leading-[1.5em] mt-3 font-normal tracking-[.02em] text-justify">
               I'm a Roblox aficionado, conquering virtual worlds with my friends
               and taking on epic challenges. <br />
               When I'm not in the gaming universe,I'm having a riot of
