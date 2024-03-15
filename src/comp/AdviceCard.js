@@ -22,13 +22,13 @@ function AdviceCard() {
 
   // console.log(lifeLaws);
   return (
-    <div className="w-full h-auto md:w-72 lg:w-96 lg:h-52 md:h-40 text-center  rounded-lg  bg-gray-500 p-5 flex flex-col gap-3 justify-center  relative shadow-md shadow-slate-700">
-      <h3 className="text-cyan-400   text-xs md:text-base  tracking-[2px] capitalize font-semibold">
+    <div className="w-full h-auto md:w-72 lg:w-96 lg:h-52 md:h-40 text-center   flex flex-col gap-3 justify-center  relative shadow-md shadow-clay bg-white p-12 rounded-3xl">
+      <h3 className="text-[#c084fc]   text-xs md:text-base  tracking-[2px] capitalize font-semibold">
         Advice of the Day
       </h3>
       <div className="h-full flex items-center justify-center">
         <div>
-          <p className="text-[#e2e8f0]  md:text-xs text-[16px] pb-4 tracking-wide font-light ">
+          <p className="text-[#c084fc]  md:text-base text-[20px] pb-4 tracking-wide font-light  ">
             {/* {error ? "loading..." : advice.advice} */}
             {/* <span className="font-semibold block">{selectedItem.law}</span> */}
             <span>{selectedItem.desc}</span>
@@ -36,13 +36,10 @@ function AdviceCard() {
         </div>
       </div>
 
-      <div className="w-full  mb-5  ">
-        <img src={divider} alt="" className="mx-auto" />
-      </div>
-      <div className="absolute -bottom-5 right-1/2 translate-x-5">
+      <div className="absolute -bottom-5 right-1 translate-x-5">
         <button
           onClick={() => setClicked((prev) => !prev)}
-          className="rounded-full bg-cyan-400 p-3  cursor-pointer  hover:scale-105 transition ease-in-out"
+          className="  p-5  cursor-pointer  hover:scale-105 transition ease-in-out shadow-clay bg-white  rounded-full"
         >
           <GrLinkNext className="w-4  font-bold " />
         </button>

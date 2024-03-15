@@ -18,7 +18,7 @@ function Blog({ eachBlog, id, setReset }) {
 
   return (
     <div
-      className="flex  flex-col   bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-700 relative
+      className="flex  flex-col border   shadow dark:border-gray-700 dark:bg-gray-700 relative p-6 shadow-clay bg-white rounded-xl
       "
     >
       {isAdmin && (
@@ -50,7 +50,7 @@ function Blog({ eachBlog, id, setReset }) {
           })}
         </span>
         <Link to={`/blogs/${id}`} className="flex items-end">
-          <button className="inline-flex w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-white hover:text-gray-600 border-2 border-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-white transition-all ease-in-out ">
+          <button className="inline-flex w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#c084fc] rounded-lg shadow-clay hover:bg-white hover:text-gray-600 border-2 border-[#c084fc] focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-white transition-all ease-in-out ">
             read more <BsArrowRight className="ml-3" />
           </button>
         </Link>
