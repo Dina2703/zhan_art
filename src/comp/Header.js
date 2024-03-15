@@ -8,13 +8,13 @@ function Header() {
       <nav className="flex  flex-col md:flex-row md:justify-between md:items-end items-center py-4  gap-5 md:gap-10 mt-2 md:mt-0">
         <NavLink
           to="/"
-          className="md:text-3xl text-4xl font-[400] flex-1  uppercase tracking-wide   w-full
+          className="md:text-5xl  text-4xl flex-1  capitalize tracking-wide   w-full  font-bold md:pl-10  drop-shadow-md
       "
         >
-          Zhan KHVAN
+          Zhan Khvan
         </NavLink>
 
-        <ul className="flex gap-5 lowercase items-end    font-light cursor-pointer   text-sm  ">
+        <ul className="flex gap-5 lowercase items-end    cursor-pointer   text-lg  font-semibold  drop-shadow-md">
           <li className="  hover:dark:text-gray-400">
             <NavLink
               to="/"

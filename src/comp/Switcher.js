@@ -20,6 +20,7 @@ export default function Switcher({ iconSize }) {
         checked={darkSide}
         onChange={toggleDarkMode}
         size={iconSize}
+        color="white"
       />
     </>
   );

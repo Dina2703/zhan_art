@@ -17,7 +17,7 @@ function App() {
 
   const Layout = () => {
     return (
-      <div className=" bg-gray-100 dark:bg-gray-600 text-slate-600 dark:text-white">
+      <div className=" bg-[#D6A2FF] dark:bg-gray-600 text-white">
         <div className="flex flex-col min-h-[100dvh] max-w-6xl mx-auto   px-5 md:px-10 2xl:px-0  relative ">
           <Header />
           <Outlet />

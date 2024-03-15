@@ -54,7 +54,7 @@ function ImageGrid({ setSelectedImg }) {
             whileHover={{ opacity: 1, cursor: "pointer" }}
             layout
             key={doc.id}
-            className="overflow-hidden shadow-customBoxShadow bg-gray-200  mb-4 rounded-md   relative opacity-[1]   "
+            className="overflow-hidden  bg-gray-200  mb-4  relative opacity-[1]  p-5 shadow-clay rounded-2xl"
             onClick={() => setSelectedImg(doc)}
           >
             {isAdmin && (
@@ -65,7 +65,7 @@ function ImageGrid({ setSelectedImg }) {
             )}{" "}
             <span
               className="
-            right-2 bottom-2 absolute text-[10px] lowercase text-slate-100"
+            right-8 bottom-7 absolute text-[10px] lowercase text-slate-100"
             >
               {doc.type}
             </span>
@@ -75,7 +75,7 @@ function ImageGrid({ setSelectedImg }) {
               transition={{ ease: "easeOut", duration: 0.5 }}
               src={doc.url}
               alt="Zhan artwork"
-              className="w-full h-auto hover:scale-105 transition-all ease-in-out "
+              className="w-full h-auto hover:scale-105 transition-all ease-in-out rounded-2xl"
               loading="lazy"
             />
           </motion.div>
