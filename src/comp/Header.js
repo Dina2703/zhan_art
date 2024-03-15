@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <div className="relative">
-      <nav className="flex  flex-col md:flex-row justify-between  md:items-end items-center py-4   md:gap-10 mt-2 md:mt-6">
+      <nav className="flex  flex-col md:flex-row justify-between  md:items-end items-center py-8   md:gap-10 mt-2 md:mt-6">
         <NavLink
           to="/"
           className="md:text-5xl  text-4xl  capitalize tracking-wide     font-bold md:pl-10  drop-shadow-md 
@@ -14,7 +14,7 @@ function Header() {
           Zhan Khvan
         </NavLink>
 
-        <ul className="flex gap-5 lowercase items-end    cursor-pointer   text-lg  font-semibold  drop-shadow-md">
+        <ul className="flex gap-5 lowercase items-end    cursor-pointer   text-lg  font-semibold  drop-shadow-md mt-5 md:mt-0">
           <li className="  hover:dark:text-gray-400">
             <NavLink
               to="/"
