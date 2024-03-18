@@ -35,7 +35,7 @@ function Home() {
         initial={{ y: 200 }}
         animate={{ y: 0 }}
         transition={{ ease: "easeOut", duration: 1 }}
-        className="relative mb-10 shadow-clay bg-white  md:p-12 rounded-3xl 
+        className="relative mb-10 shadow-clay dark:shadow-customBoxShadow bg-white  md:p-12 rounded-3xl 
       "
       >
         <div className=" bg-bg-mobile md:bg-bg-desk w-full md:h-[500px] h-[460px] bg-cover rounded-lg bg-top bg-no-repeat   brightness-110 "></div>
@@ -43,7 +43,7 @@ function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1.5 }}
-          className="absolute 2xl:top-36  md:top-28  top-0 right-0 left-0 lg:left-[50%] md:left-[40%] w-full  md:w-60  md:text-[#c084fc] text-sm dark:text-slate-600 text-white font-normal md:text-left md:text-xl bg-[rgba(0,0,0,0.1)] rounded-md p-3 text-center"
+          className="absolute 2xl:top-36  md:top-28  top-0 right-0 left-0 lg:left-[50%] md:left-[40%] w-full  md:w-60  md:text-[#c084fc] text-sm dark:text-slate-600 text-white font-normal md:text-left md:text-xl rounded-md p-3 text-center"
         >
           Welcome to my digital sketchbook. <br /> I'm Zhan and I'm here to take
           you on a visual adventure through my drawings.

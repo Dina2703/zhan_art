@@ -9,12 +9,12 @@ function About() {
       transition={{ ease: "easeOut", duration: 1 }}
       className="flex-1"
     >
-      <div className=" flex lg:flex-row flex-col   items-center text-center lg:text-left justify-center  gap-x-16 2xl:px-20 md:mt-10 ">
+      <div className=" flex lg:flex-row flex-col   items-center text-center lg:text-left justify-center  gap-x-16 2xl:px-20 md:mt-3 ">
         <div className="lg:px-0  mt-5 lg:mt-0">
           <img
             src="about_me.JPG"
             alt="Zhan Khvan"
-            className="w-auto h-[20em] lg:h-[550px] rounded-2xl shadow-clay p-1"
+            className="w-auto h-[20em] lg:h-[550px] rounded-2xl shadow-clay dark:shadow-customBoxShadow p-1"
           />
         </div>
         <div className="flex-1">

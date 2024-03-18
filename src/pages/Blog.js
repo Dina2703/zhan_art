@@ -64,7 +64,7 @@ function Blog({ blogsData }) {
           </motion.p>
         </div>
       </div>
-      <span className="text-gray-400 text-[14px] mt-4 pr-10 float-right ">
+      <span className="text-white text-[14px] mt-4 pr-10 float-right ">
         {" "}
         {new Date(blog.createdAt?.seconds * 1000).toLocaleDateString("en-US", {
           day: "numeric",

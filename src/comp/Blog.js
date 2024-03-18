@@ -18,7 +18,7 @@ function Blog({ eachBlog, id, setReset }) {
 
   return (
     <div
-      className="flex  flex-col border   shadow dark:border-gray-700 dark:bg-gray-700 relative p-6 shadow-clay bg-white rounded-xl
+      className="flex  flex-col border   shadow dark:border-gray-700 dark:bg-gray-700 relative p-6 shadow-clay dark:shadow-customBoxShadow bg-white rounded-xl
       "
     >
       {isAdmin && (
@@ -42,7 +42,7 @@ function Blog({ eachBlog, id, setReset }) {
         <p className="text-[15px] line-clamp-2 mb-2 font-normal overflow-hidden text-gray-700 dark:text-gray-400 h-10">
           {body}
         </p>
-        <span className="text-gray-500 text-[12px] text-end w-full ">
+        <span className="text-white text-[12px] text-end w-full ">
           {new Date(createdAt?.seconds * 1000).toLocaleDateString("en-US", {
             day: "numeric",
             month: "short",
@@ -50,7 +50,7 @@ function Blog({ eachBlog, id, setReset }) {
           })}
         </span>
         <Link to={`/blogs/${id}`} className="flex items-end">
-          <button className="inline-flex w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#c084fc] rounded-lg shadow-clay hover:bg-white hover:text-gray-600 border-2 border-[#c084fc] focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-white transition-all ease-in-out ">
+          <button className="inline-flex w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#c084fc] rounded-lg shadow-clay dark:shadow-customBoxShadow hover:scale-[.97]  border-2 border-[#c084fc] dark:border-gray-600  dark:bg-gray-600  transition-all ease-in-out ">
             read more <BsArrowRight className="ml-3" />
           </button>
         </Link>

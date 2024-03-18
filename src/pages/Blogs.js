@@ -75,7 +75,7 @@ function Blogs({ isAdmin }) {
           </span>
         </Link>
       )}
-      <div className=" lg:text-2xl text-xl   dark:text-white  text-center mt-10 md:text-2xl  font-normal  mb-10 lg:my-16  text-white md:font-semibold ">
+      <div className=" lg:text-2xl text-xl   dark:text-white  text-center mt-5 md:text-2xl  font-normal   lg:my-11  text-white md:font-semibold ">
         The World According to Me
       </div>
       {blogsData.length > 0 ? (
