@@ -51,10 +51,10 @@ function ImageGrid({ setSelectedImg }) {
       {docs &&
         docs.map((doc) => (
           <motion.div
-            whileHover={{ opacity: 1, cursor: "pointer" }}
+            whileHover={{ cursor: "pointer" }}
             layout
             key={doc.id}
-            className="overflow-hidden  bg-gray-200  mb-4  relative opacity-[1]  p-5 shadow-clay dark:shadow-customBoxShadow rounded-2xl"
+            className="overflow-hidden  bg-white mb-4  relative  p-5 shadow-clay dark:shadow-customBoxShadow rounded-2xl "
             onClick={() => setSelectedImg(doc)}
           >
             {isAdmin && (

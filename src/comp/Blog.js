@@ -49,8 +49,8 @@ function Blog({ eachBlog, id, setReset }) {
             year: "numeric",
           })}
         </span>
-        <Link to={`/blogs/${id}`} className="flex items-end">
-          <button className="inline-flex w-32 items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#c084fc] rounded-lg shadow-clay dark:shadow-customBoxShadow hover:scale-[.97]  border-2 border-[#c084fc] dark:border-gray-600  dark:bg-gray-600  transition-all ease-in-out ">
+        <Link to={`/blogs/${id}`} className="flex items-end cursor-default">
+          <button className="inline-flex w-32 items-center justify-between px-3 py-2 text-sm font-medium text-center text-white bg-[#c084fc] rounded-lg shadow-claySmallBtn dark:shadow-customBoxShadow hover:bg-white hover:text-[#c084fc]  hover:w-full border-2 border-[#c084fc] dark:border-gray-600  dark:bg-gray-600  transition-all ease-in-out cursor-pointer ">
             read more <BsArrowRight className="ml-3" />
           </button>
         </Link>
