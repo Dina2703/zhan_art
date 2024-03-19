@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import AdviceCard from "../comp/AdviceCard";
 import Blog from "../comp/Blog";
 import { Link } from "react-router-dom";
-
-import { motion } from "framer-motion";
 import { getDocs, collection, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase/config";
 
@@ -13,7 +11,7 @@ function Blogs({ isAdmin }) {
 
   useEffect(() => {
     const getPostsArray = async () => {
-      const postRef = await collection(db, "posts");
+      const postRef = collection(db, "posts");
 
       const q = query(postRef, orderBy("createdAt", "desc"));
       // querySnapShot.docs.map((doc) => console.log(doc.data()));
@@ -52,12 +50,7 @@ function Blogs({ isAdmin }) {
   }, [reset]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 2 }}
-      className="flex flex-col gap-10 h-fit"
-    >
+    <div className="flex flex-col gap-10 h-fit min-h-screen">
       <div className="flex flex-col-reverse md:flex-row-reverse md:justify-around  items-center md:mt-20  gap-10 lg:gap-0 ">
         <div className="hidden md:block">
           <AdviceCard />
@@ -81,7 +74,7 @@ function Blogs({ isAdmin }) {
         The World According to Me
       </div>
       {blogsData.length > 0 ? (
-        <div className=" grid items-center justify-center md:gap-x-6  md:gap-y-10 gap-y-3  md:grid-cols-2 lg:grid-cols-3 ">
+        <div className=" grid items-center justify-center md:gap-x-6  md:gap-y-10 gap-y-8  md:grid-cols-2 lg:grid-cols-3 ">
           {blogsData.map((eachBlog) => (
             <Blog
               eachBlog={eachBlog.data}
@@ -92,9 +85,9 @@ function Blogs({ isAdmin }) {
           ))}
         </div>
       ) : (
-        <p className="text-center">No Posts</p>
+        <p className="text-center ">Loading ... 🤔 </p>
       )}
-    </motion.div>
+    </div>
   );
 }
 

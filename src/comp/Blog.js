@@ -18,7 +18,7 @@ function Blog({ eachBlog, id, setReset }) {
 
   return (
     <div
-      className="flex  flex-col border   shadow dark:border-gray-700 dark:bg-gray-700 relative p-6 shadow-clay dark:shadow-customBoxShadow bg-white rounded-xl
+      className="flex  flex-col border   shadow dark:border-gray-700 dark:bg-gray-700 relative md:p-6 px-6 pt-6 pb-4 shadow-claySmallBtn dark:shadow-customBoxShadow bg-white rounded-xl
       "
     >
       {isAdmin && (
