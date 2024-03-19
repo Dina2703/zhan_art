@@ -59,9 +59,11 @@ function Blogs({ isAdmin }) {
       className="flex flex-col gap-10 h-fit"
     >
       <div className="flex flex-col-reverse md:flex-row-reverse md:justify-around  items-center md:mt-20  gap-10 lg:gap-0 ">
-        <AdviceCard />
+        <div className="hidden md:block">
+          <AdviceCard />
+        </div>
 
-        <div className="md:w-2/5 w-full text-[18px] leading-[1.8em] mt-6 text-left font-light tracking-[.02em]">
+        <div className="md:w-2/5 w-full text-[18px] leading-[1.8em] mt-3 md:mt-6 text-left font-light tracking-[.02em]">
           Step into the world of my post page, where every scroll is a new
           adventure waiting to happen! 🌟🚀 So, stay tuned for a dose of
           intriguing stories, insightful tips, and perhaps a few surprises along
